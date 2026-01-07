@@ -1,0 +1,1405 @@
+/**
+ * Afrisol Pages Stylesheet
+ */
+
+/* =========================================
+   Why Choose Section
+   ========================================= */
+.afrisol-why-choose {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.afrisol-why-image {
+    flex: 1;
+    position: relative;
+}
+
+.afrisol-why-image-wrapper {
+    width: 100%;
+    height: 450px;
+    background: var(--afrisol-glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+.afrisol-why-image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), transparent);
+    z-index: 1;
+}
+
+.afrisol-why-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.afrisol-why-content {
+    flex: 1;
+}
+
+.afrisol-why-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.afrisol-why-content p {
+    color: var(--afrisol-text-muted);
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.afrisol-why-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.afrisol-why-feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--afrisol-glass-bg);
+    padding: 15px 20px;
+    border-radius: var(--afrisol-radius-lg);
+    border: 1px solid var(--afrisol-glass-border);
+}
+
+.afrisol-why-feature-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--afrisol-primary), var(--afrisol-primary-light));
+    border-radius: var(--afrisol-radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+}
+
+.afrisol-why-feature span {
+    font-weight: 500;
+    color: var(--afrisol-text-light);
+}
+
+/* =========================================
+   Map Section
+   ========================================= */
+.afrisol-map-section {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.afrisol-map-wrapper {
+    flex: 1;
+    height: 400px;
+    background: var(--afrisol-glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-xl);
+    overflow: hidden;
+}
+
+.afrisol-map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.afrisol-map-info {
+    flex: 1;
+}
+
+.afrisol-map-info h2 {
+    font-size: 2.25rem;
+    margin-bottom: 20px;
+}
+
+.afrisol-map-address {
+    color: var(--afrisol-text-muted);
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.afrisol-map-address i {
+    color: var(--afrisol-primary);
+    margin-right: 10px;
+}
+
+/* =========================================
+   Products Page
+   ========================================= */
+.afrisol-products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--afrisol-spacing-xl);
+    flex-wrap: wrap;
+    gap: var(--afrisol-spacing-md);
+}
+
+.afrisol-products-count {
+    color: var(--afrisol-text-muted);
+}
+
+.afrisol-products-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--afrisol-spacing-md);
+}
+
+.afrisol-view-toggle {
+    display: flex;
+    gap: 5px;
+}
+
+.afrisol-view-btn {
+    width: 36px;
+    height: 36px;
+    background: var(--afrisol-glass-bg);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--afrisol-text-muted);
+    cursor: pointer;
+    transition: all var(--afrisol-transition-fast);
+}
+
+.afrisol-view-btn.active,
+.afrisol-view-btn:hover {
+    background: var(--afrisol-primary);
+    border-color: var(--afrisol-primary);
+    color: white;
+}
+
+.afrisol-sort-select {
+    padding: 10px 40px 10px 15px;
+    background: var(--afrisol-glass-bg);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-md);
+    color: var(--afrisol-text-light);
+    font-size: 0.875rem;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23a0a0a0' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+}
+
+.afrisol-products-layout {
+    display: flex;
+    gap: var(--afrisol-spacing-xl);
+}
+
+.afrisol-products-sidebar {
+    width: 280px;
+    flex-shrink: 0;
+}
+
+.afrisol-filter-card {
+    background: var(--afrisol-glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-lg);
+    padding: var(--afrisol-spacing-lg);
+    margin-bottom: var(--afrisol-spacing-lg);
+}
+
+.afrisol-filter-title {
+    font-size: 1rem;
+    color: var(--afrisol-text-light);
+    margin-bottom: var(--afrisol-spacing-md);
+    padding-bottom: var(--afrisol-spacing-sm);
+    border-bottom: 1px solid var(--afrisol-glass-border);
+}
+
+.afrisol-filter-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.afrisol-filter-list li {
+    margin-bottom: var(--afrisol-spacing-sm);
+}
+
+.afrisol-filter-list a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--afrisol-text-muted);
+    text-decoration: none;
+    padding: 8px 0;
+    transition: color var(--afrisol-transition-fast);
+}
+
+.afrisol-filter-list a:hover,
+.afrisol-filter-list a.active {
+    color: var(--afrisol-primary);
+}
+
+.afrisol-filter-list .count {
+    font-size: 0.75rem;
+    background: var(--afrisol-glass-bg);
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+.afrisol-price-range {
+    padding: var(--afrisol-spacing-sm) 0;
+}
+
+.afrisol-price-inputs {
+    display: flex;
+    gap: var(--afrisol-spacing-sm);
+    align-items: center;
+}
+
+.afrisol-price-inputs input {
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-sm);
+    color: var(--afrisol-text-light);
+    font-size: 0.875rem;
+}
+
+.afrisol-price-inputs span {
+    color: var(--afrisol-text-muted);
+}
+
+.afrisol-products-content {
+    flex: 1;
+}
+
+.afrisol-products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--afrisol-spacing-lg);
+}
+
+.afrisol-products-grid.list-view {
+    grid-template-columns: 1fr;
+}
+
+.afrisol-products-grid.list-view .afrisol-product-card {
+    display: flex;
+}
+
+.afrisol-products-grid.list-view .afrisol-product-image {
+    width: 250px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.afrisol-products-grid.list-view .afrisol-product-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Search Bar */
+.afrisol-search-bar {
+    display: flex;
+    gap: var(--afrisol-spacing-sm);
+    margin-bottom: var(--afrisol-spacing-lg);
+}
+
+.afrisol-search-bar input {
+    flex: 1;
+    padding: 12px 20px;
+    background: var(--afrisol-glass-bg);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-md);
+    color: var(--afrisol-text-light);
+    font-size: 0.9375rem;
+}
+
+.afrisol-search-bar input:focus {
+    outline: none;
+    border-color: var(--afrisol-primary);
+}
+
+.afrisol-search-bar button {
+    padding: 12px 20px;
+}
+
+/* =========================================
+   Single Product Page
+   ========================================= */
+.afrisol-single-product {
+    display: flex;
+    gap: var(--afrisol-spacing-2xl);
+    margin-bottom: var(--afrisol-spacing-3xl);
+}
+
+.afrisol-product-gallery {
+    flex: 1;
+}
+
+.afrisol-gallery-main {
+    width: 100%;
+    height: 450px;
+    background: var(--afrisol-glass-bg);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-lg);
+    overflow: hidden;
+    margin-bottom: var(--afrisol-spacing-md);
+    position: relative;
+}
+
+.afrisol-gallery-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: zoom-in;
+}
+
+.afrisol-gallery-thumbs {
+    display: flex;
+    gap: var(--afrisol-spacing-sm);
+    overflow-x: auto;
+}
+
+.afrisol-gallery-thumb {
+    width: 80px;
+    height: 80px;
+    background: var(--afrisol-glass-bg);
+    border: 2px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-md);
+    overflow: hidden;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: border-color var(--afrisol-transition-fast);
+}
+
+.afrisol-gallery-thumb.active,
+.afrisol-gallery-thumb:hover {
+    border-color: var(--afrisol-primary);
+}
+
+.afrisol-gallery-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.afrisol-product-details {
+    flex: 1;
+}
+
+.afrisol-product-details h1 {
+    font-size: 2rem;
+    color: var(--afrisol-text-light);
+    margin-bottom: var(--afrisol-spacing-sm);
+}
+
+.afrisol-product-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--afrisol-spacing-lg);
+    margin-bottom: var(--afrisol-spacing-lg);
+    color: var(--afrisol-text-muted);
+    font-size: 0.875rem;
+}
+
+.afrisol-product-price-large {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--afrisol-primary);
+    margin-bottom: var(--afrisol-spacing-lg);
+}
+
+.afrisol-product-price-large .old {
+    font-size: 1.5rem;
+    color: var(--afrisol-text-muted);
+    text-decoration: line-through;
+    margin-left: var(--afrisol-spacing-md);
+    font-weight: 400;
+}
+
+.afrisol-product-description {
+    color: var(--afrisol-text-muted);
+    line-height: 1.8;
+    margin-bottom: var(--afrisol-spacing-lg);
+}
+
+.afrisol-quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: var(--afrisol-spacing-md);
+    margin-bottom: var(--afrisol-spacing-lg);
+}
+
+.afrisol-quantity-selector label {
+    color: var(--afrisol-text-light);
+    font-weight: 500;
+}
+
+.afrisol-quantity-input {
+    display: flex;
+    align-items: center;
+    background: var(--afrisol-glass-bg);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-md);
+    overflow: hidden;
+}
+
+.afrisol-quantity-btn {
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    color: var(--afrisol-text-light);
+    cursor: pointer;
+    transition: background var(--afrisol-transition-fast);
+}
+
+.afrisol-quantity-btn:hover {
+    background: var(--afrisol-primary);
+}
+
+.afrisol-quantity-input input {
+    width: 60px;
+    height: 40px;
+    background: none;
+    border: none;
+    text-align: center;
+    color: var(--afrisol-text-light);
+    font-size: 1rem;
+}
+
+.afrisol-product-actions-large {
+    display: flex;
+    gap: var(--afrisol-spacing-md);
+    margin-bottom: var(--afrisol-spacing-xl);
+}
+
+.afrisol-product-specs {
+    margin-top: var(--afrisol-spacing-xl);
+}
+
+.afrisol-specs-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.afrisol-specs-table tr {
+    border-bottom: 1px solid var(--afrisol-glass-border);
+}
+
+.afrisol-specs-table th,
+.afrisol-specs-table td {
+    padding: var(--afrisol-spacing-md);
+    text-align: left;
+}
+
+.afrisol-specs-table th {
+    color: var(--afrisol-text-muted);
+    font-weight: 500;
+    width: 40%;
+}
+
+.afrisol-specs-table td {
+    color: var(--afrisol-text-light);
+}
+
+/* =========================================
+   Services Page
+   ========================================= */
+.afrisol-services-categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--afrisol-spacing-xl);
+}
+
+.afrisol-service-category {
+    background: var(--afrisol-glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-xl);
+    padding: var(--afrisol-spacing-xl);
+}
+
+.afrisol-service-category h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--afrisol-spacing-lg);
+    color: var(--afrisol-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--afrisol-spacing-md);
+}
+
+.afrisol-service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.afrisol-service-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--afrisol-spacing-md);
+    padding: var(--afrisol-spacing-md) 0;
+    border-bottom: 1px solid var(--afrisol-glass-border);
+    color: var(--afrisol-text-light);
+}
+
+.afrisol-service-list li:last-child {
+    border-bottom: none;
+}
+
+.afrisol-service-list li i {
+    color: var(--afrisol-primary);
+}
+
+/* =========================================
+   Calculator Page
+   ========================================= */
+.afrisol-calculator-wrapper {
+    display: flex;
+    gap: var(--afrisol-spacing-2xl);
+}
+
+.afrisol-calculator-form {
+    flex: 1;
+}
+
+.afrisol-calculator-results {
+    flex: 1;
+}
+
+.afrisol-result-card {
+    background: var(--afrisol-glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-xl);
+    padding: var(--afrisol-spacing-xl);
+    margin-bottom: var(--afrisol-spacing-lg);
+}
+
+.afrisol-result-card h4 {
+    color: var(--afrisol-primary);
+    margin-bottom: var(--afrisol-spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--afrisol-spacing-sm);
+}
+
+.afrisol-result-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--afrisol-text-light);
+}
+
+.afrisol-result-value small {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--afrisol-text-muted);
+}
+
+.afrisol-appliances-list {
+    background: var(--afrisol-glass-bg);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-lg);
+    padding: var(--afrisol-spacing-lg);
+    margin-bottom: var(--afrisol-spacing-lg);
+}
+
+.afrisol-appliance-row {
+    display: flex;
+    gap: var(--afrisol-spacing-md);
+    align-items: center;
+    margin-bottom: var(--afrisol-spacing-md);
+}
+
+.afrisol-appliance-row select,
+.afrisol-appliance-row input {
+    flex: 1;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-sm);
+    color: var(--afrisol-text-light);
+}
+
+.afrisol-appliance-row button {
+    padding: 10px;
+    background: var(--afrisol-error);
+    border: none;
+    border-radius: var(--afrisol-radius-sm);
+    color: white;
+    cursor: pointer;
+}
+
+/* =========================================
+   Quote Page (Multi-step)
+   ========================================= */
+.afrisol-quote-steps {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--afrisol-spacing-2xl);
+}
+
+.afrisol-step {
+    display: flex;
+    align-items: center;
+    gap: var(--afrisol-spacing-sm);
+}
+
+.afrisol-step-number {
+    width: 36px;
+    height: 36px;
+    background: var(--afrisol-glass-bg);
+    border: 2px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: var(--afrisol-text-muted);
+}
+
+.afrisol-step.active .afrisol-step-number,
+.afrisol-step.completed .afrisol-step-number {
+    background: var(--afrisol-primary);
+    border-color: var(--afrisol-primary);
+    color: white;
+}
+
+.afrisol-step-label {
+    color: var(--afrisol-text-muted);
+    font-size: 0.875rem;
+}
+
+.afrisol-step.active .afrisol-step-label {
+    color: var(--afrisol-text-light);
+    font-weight: 500;
+}
+
+.afrisol-step-line {
+    width: 50px;
+    height: 2px;
+    background: var(--afrisol-glass-border);
+    margin: 0 var(--afrisol-spacing-md);
+}
+
+.afrisol-step.completed + .afrisol-step-line {
+    background: var(--afrisol-primary);
+}
+
+.afrisol-quote-step-content {
+    display: none;
+}
+
+.afrisol-quote-step-content.active {
+    display: block;
+}
+
+.afrisol-quote-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--afrisol-spacing-lg);
+}
+
+.afrisol-quote-option {
+    background: var(--afrisol-glass-bg);
+    border: 2px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-lg);
+    padding: var(--afrisol-spacing-xl);
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--afrisol-transition-normal);
+}
+
+.afrisol-quote-option:hover,
+.afrisol-quote-option.selected {
+    border-color: var(--afrisol-primary);
+    background: rgba(255, 107, 53, 0.1);
+}
+
+.afrisol-quote-option i {
+    font-size: 2.5rem;
+    color: var(--afrisol-primary);
+    margin-bottom: var(--afrisol-spacing-md);
+}
+
+.afrisol-quote-option h4 {
+    color: var(--afrisol-text-light);
+    margin-bottom: var(--afrisol-spacing-sm);
+}
+
+.afrisol-quote-option p {
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+.afrisol-quote-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--afrisol-spacing-xl);
+}
+
+/* =========================================
+   Customer Portal
+   ========================================= */
+.afrisol-portal-layout {
+    display: flex;
+    gap: var(--afrisol-spacing-xl);
+}
+
+.afrisol-portal-sidebar {
+    width: 280px;
+    flex-shrink: 0;
+}
+
+.afrisol-portal-menu {
+    background: var(--afrisol-glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-lg);
+    overflow: hidden;
+}
+
+.afrisol-portal-menu a {
+    display: flex;
+    align-items: center;
+    gap: var(--afrisol-spacing-md);
+    padding: var(--afrisol-spacing-md) var(--afrisol-spacing-lg);
+    color: var(--afrisol-text-muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--afrisol-glass-border);
+    transition: all var(--afrisol-transition-fast);
+}
+
+.afrisol-portal-menu a:last-child {
+    border-bottom: none;
+}
+
+.afrisol-portal-menu a:hover,
+.afrisol-portal-menu a.active {
+    background: rgba(255, 107, 53, 0.1);
+    color: var(--afrisol-primary);
+}
+
+.afrisol-portal-menu i {
+    width: 20px;
+    text-align: center;
+}
+
+.afrisol-portal-content {
+    flex: 1;
+}
+
+.afrisol-portal-header {
+    margin-bottom: var(--afrisol-spacing-xl);
+}
+
+.afrisol-portal-header h1 {
+    font-size: 2rem;
+    color: var(--afrisol-text-light);
+}
+
+.afrisol-dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--afrisol-spacing-lg);
+    margin-bottom: var(--afrisol-spacing-xl);
+}
+
+.afrisol-stat-card {
+    background: var(--afrisol-glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-lg);
+    padding: var(--afrisol-spacing-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--afrisol-spacing-md);
+}
+
+.afrisol-stat-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--afrisol-primary), var(--afrisol-primary-light));
+    border-radius: var(--afrisol-radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: white;
+}
+
+.afrisol-stat-content h3 {
+    font-size: 1.5rem;
+    color: var(--afrisol-text-light);
+    margin-bottom: 0;
+}
+
+.afrisol-stat-content p {
+    font-size: 0.8125rem;
+    margin: 0;
+}
+
+/* =========================================
+   Cart Page
+   ========================================= */
+.afrisol-cart-layout {
+    display: flex;
+    gap: var(--afrisol-spacing-xl);
+}
+
+.afrisol-cart-items {
+    flex: 1;
+}
+
+.afrisol-cart-summary {
+    width: 350px;
+    flex-shrink: 0;
+}
+
+.afrisol-cart-item {
+    display: flex;
+    gap: var(--afrisol-spacing-lg);
+    background: var(--afrisol-glass-bg);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-lg);
+    padding: var(--afrisol-spacing-lg);
+    margin-bottom: var(--afrisol-spacing-md);
+}
+
+.afrisol-cart-item-image {
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--afrisol-radius-md);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.afrisol-cart-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.afrisol-cart-item-details {
+    flex: 1;
+}
+
+.afrisol-cart-item-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--afrisol-text-light);
+    margin-bottom: var(--afrisol-spacing-sm);
+}
+
+.afrisol-cart-item-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--afrisol-primary);
+}
+
+.afrisol-cart-item-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--afrisol-spacing-lg);
+    margin-top: var(--afrisol-spacing-md);
+}
+
+.afrisol-cart-remove {
+    color: var(--afrisol-error);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.875rem;
+}
+
+.afrisol-cart-remove:hover {
+    text-decoration: underline;
+}
+
+.afrisol-cart-summary-card {
+    background: var(--afrisol-glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-xl);
+    padding: var(--afrisol-spacing-xl);
+    position: sticky;
+    top: 100px;
+}
+
+.afrisol-cart-summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--afrisol-spacing-md);
+    color: var(--afrisol-text-muted);
+}
+
+.afrisol-cart-summary-row.total {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--afrisol-text-light);
+    padding-top: var(--afrisol-spacing-md);
+    border-top: 1px solid var(--afrisol-glass-border);
+    margin-top: var(--afrisol-spacing-md);
+}
+
+.afrisol-cart-summary-row.total span:last-child {
+    color: var(--afrisol-primary);
+}
+
+.afrisol-coupon-input {
+    display: flex;
+    gap: var(--afrisol-spacing-sm);
+    margin: var(--afrisol-spacing-lg) 0;
+}
+
+.afrisol-coupon-input input {
+    flex: 1;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-md);
+    color: var(--afrisol-text-light);
+}
+
+/* =========================================
+   Blog Page
+   ========================================= */
+.afrisol-blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--afrisol-spacing-xl);
+}
+
+.afrisol-blog-card {
+    background: var(--afrisol-glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-lg);
+    overflow: hidden;
+    transition: transform var(--afrisol-transition-normal);
+}
+
+.afrisol-blog-card:hover {
+    transform: translateY(-5px);
+}
+
+.afrisol-blog-image {
+    height: 200px;
+    background: rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+}
+
+.afrisol-blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--afrisol-transition-normal);
+}
+
+.afrisol-blog-card:hover .afrisol-blog-image img {
+    transform: scale(1.05);
+}
+
+.afrisol-blog-content {
+    padding: var(--afrisol-spacing-lg);
+}
+
+.afrisol-blog-meta {
+    display: flex;
+    gap: var(--afrisol-spacing-md);
+    margin-bottom: var(--afrisol-spacing-sm);
+    font-size: 0.75rem;
+    color: var(--afrisol-text-muted);
+}
+
+.afrisol-blog-title {
+    font-size: 1.1rem;
+    color: var(--afrisol-text-light);
+    margin-bottom: var(--afrisol-spacing-sm);
+}
+
+.afrisol-blog-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.afrisol-blog-title a:hover {
+    color: var(--afrisol-primary);
+}
+
+.afrisol-blog-excerpt {
+    font-size: 0.875rem;
+    color: var(--afrisol-text-muted);
+    margin-bottom: var(--afrisol-spacing-md);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* =========================================
+   About Page
+   ========================================= */
+.afrisol-about-hero {
+    text-align: center;
+    margin-bottom: var(--afrisol-spacing-3xl);
+}
+
+.afrisol-about-hero h1 {
+    font-size: 3rem;
+}
+
+.afrisol-about-content {
+    display: flex;
+    gap: var(--afrisol-spacing-2xl);
+    align-items: center;
+    margin-bottom: var(--afrisol-spacing-3xl);
+}
+
+.afrisol-about-content.reverse {
+    flex-direction: row-reverse;
+}
+
+.afrisol-about-image {
+    flex: 1;
+}
+
+.afrisol-about-image-wrapper {
+    height: 400px;
+    background: var(--afrisol-glass-bg);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-xl);
+    overflow: hidden;
+}
+
+.afrisol-about-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.afrisol-about-text {
+    flex: 1;
+}
+
+.afrisol-about-text h2 {
+    margin-bottom: var(--afrisol-spacing-md);
+}
+
+.afrisol-about-text p {
+    line-height: 1.8;
+}
+
+.afrisol-team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--afrisol-spacing-xl);
+}
+
+.afrisol-team-card {
+    background: var(--afrisol-glass-bg);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-lg);
+    padding: var(--afrisol-spacing-lg);
+    text-align: center;
+}
+
+.afrisol-team-image {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, var(--afrisol-primary), var(--afrisol-primary-light));
+    border-radius: var(--afrisol-radius-full);
+    margin: 0 auto var(--afrisol-spacing-md);
+    overflow: hidden;
+}
+
+.afrisol-team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.afrisol-team-name {
+    font-size: 1.1rem;
+    color: var(--afrisol-text-light);
+    margin-bottom: var(--afrisol-spacing-xs);
+}
+
+.afrisol-team-role {
+    font-size: 0.875rem;
+    color: var(--afrisol-primary);
+    margin-bottom: var(--afrisol-spacing-sm);
+}
+
+.afrisol-impact-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--afrisol-spacing-xl);
+    text-align: center;
+}
+
+.afrisol-impact-stat {
+    background: var(--afrisol-glass-bg);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-lg);
+    padding: var(--afrisol-spacing-xl);
+}
+
+.afrisol-impact-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--afrisol-primary);
+    margin-bottom: var(--afrisol-spacing-sm);
+}
+
+.afrisol-impact-label {
+    color: var(--afrisol-text-muted);
+}
+
+/* =========================================
+   Contact Page
+   ========================================= */
+.afrisol-contact-layout {
+    display: flex;
+    gap: var(--afrisol-spacing-2xl);
+}
+
+.afrisol-contact-info {
+    flex: 1;
+}
+
+.afrisol-contact-form-wrapper {
+    flex: 1;
+}
+
+.afrisol-contact-card {
+    background: var(--afrisol-glass-bg);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-lg);
+    padding: var(--afrisol-spacing-lg);
+    margin-bottom: var(--afrisol-spacing-lg);
+    display: flex;
+    gap: var(--afrisol-spacing-md);
+}
+
+.afrisol-contact-card-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--afrisol-primary), var(--afrisol-primary-light));
+    border-radius: var(--afrisol-radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.afrisol-contact-card h4 {
+    color: var(--afrisol-text-light);
+    margin-bottom: var(--afrisol-spacing-xs);
+}
+
+.afrisol-contact-card p {
+    margin: 0;
+    font-size: 0.9375rem;
+}
+
+.afrisol-contact-card a {
+    color: var(--afrisol-primary);
+}
+
+/* =========================================
+   Thank You Page
+   ========================================= */
+.afrisol-thank-you {
+    text-align: center;
+    padding: var(--afrisol-spacing-3xl) 0;
+}
+
+.afrisol-thank-you-icon {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--afrisol-success), #34d399);
+    border-radius: var(--afrisol-radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--afrisol-spacing-xl);
+}
+
+.afrisol-thank-you-icon i {
+    font-size: 3rem;
+    color: white;
+}
+
+.afrisol-thank-you h1 {
+    font-size: 2.5rem;
+    color: var(--afrisol-text-light);
+    margin-bottom: var(--afrisol-spacing-md);
+}
+
+.afrisol-confirmation-number {
+    background: var(--afrisol-glass-bg);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-lg);
+    padding: var(--afrisol-spacing-lg);
+    display: inline-block;
+    margin: var(--afrisol-spacing-xl) 0;
+}
+
+.afrisol-confirmation-number label {
+    display: block;
+    color: var(--afrisol-text-muted);
+    font-size: 0.875rem;
+    margin-bottom: var(--afrisol-spacing-sm);
+}
+
+.afrisol-confirmation-number code {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--afrisol-primary);
+    letter-spacing: 2px;
+}
+
+/* =========================================
+   Login/Register Pages
+   ========================================= */
+.afrisol-auth-page {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--afrisol-spacing-2xl) 0;
+}
+
+.afrisol-auth-container {
+    width: 100%;
+    max-width: 450px;
+}
+
+.afrisol-auth-header {
+    text-align: center;
+    margin-bottom: var(--afrisol-spacing-xl);
+}
+
+.afrisol-auth-header h1 {
+    font-size: 2rem;
+    color: var(--afrisol-text-light);
+    margin-bottom: var(--afrisol-spacing-sm);
+}
+
+.afrisol-auth-header p {
+    color: var(--afrisol-text-muted);
+}
+
+/* =========================================
+   Admin Frontend
+   ========================================= */
+.afrisol-admin-frontend {
+    padding: var(--afrisol-spacing-xl) 0;
+}
+
+.afrisol-admin-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--afrisol-spacing-lg);
+    margin-bottom: var(--afrisol-spacing-xl);
+}
+
+.afrisol-admin-card {
+    background: var(--afrisol-glass-bg);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-lg);
+    padding: var(--afrisol-spacing-lg);
+}
+
+.afrisol-admin-card h3 {
+    color: var(--afrisol-text-light);
+    margin-bottom: var(--afrisol-spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--afrisol-spacing-sm);
+}
+
+.afrisol-admin-card h3 i {
+    color: var(--afrisol-primary);
+}
+
+.afrisol-image-upload-zone {
+    border: 2px dashed var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-lg);
+    padding: var(--afrisol-spacing-xl);
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--afrisol-transition-normal);
+}
+
+.afrisol-image-upload-zone:hover {
+    border-color: var(--afrisol-primary);
+    background: rgba(255, 107, 53, 0.05);
+}
+
+.afrisol-image-upload-zone i {
+    font-size: 2rem;
+    color: var(--afrisol-primary);
+    margin-bottom: var(--afrisol-spacing-md);
+}
+
+.afrisol-image-upload-zone p {
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+.afrisol-image-preview {
+    margin-top: var(--afrisol-spacing-md);
+}
+
+.afrisol-image-preview img {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: var(--afrisol-radius-md);
+}
+
+/* =========================================
+   Empty States
+   ========================================= */
+.afrisol-empty-state {
+    text-align: center;
+    padding: var(--afrisol-spacing-3xl);
+}
+
+.afrisol-empty-state i {
+    font-size: 4rem;
+    color: var(--afrisol-text-muted);
+    margin-bottom: var(--afrisol-spacing-lg);
+    opacity: 0.5;
+}
+
+.afrisol-empty-state h3 {
+    color: var(--afrisol-text-light);
+    margin-bottom: var(--afrisol-spacing-sm);
+}
+
+.afrisol-empty-state p {
+    max-width: 400px;
+    margin: 0 auto var(--afrisol-spacing-lg);
+}
