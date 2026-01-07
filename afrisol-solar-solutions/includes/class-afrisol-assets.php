@@ -171,6 +171,26 @@ class Afrisol_Assets {
         if ($pwa_enabled) {
             add_action('wp_head', array(__CLASS__, 'add_pwa_meta'));
         }
+        
+        // Add performance optimizations
+        add_action('wp_head', array(__CLASS__, 'add_performance_hints'), 1);
+    }
+    
+    /**
+     * Add performance hints for faster loading
+     */
+    public static function add_performance_hints() {
+        // DNS prefetch for external resources
+        echo '<link rel="dns-prefetch" href="//fonts.googleapis.com">' . "\n";
+        echo '<link rel="dns-prefetch" href="//fonts.gstatic.com">' . "\n";
+        echo '<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">' . "\n";
+        
+        // Preconnect for critical resources
+        echo '<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>' . "\n";
+        echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
+        
+        // Preload critical fonts
+        echo '<link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&display=swap" as="style">' . "\n";
     }
     
     /**
@@ -222,5 +242,81 @@ class Afrisol_Assets {
             'ajax_url' => admin_url('admin-ajax.php'),
             'nonce' => wp_create_nonce('afrisol_admin_nonce'),
         ));
+    }
+    
+    /**
+     * Initialize image optimization hooks
+     */
+    public static function init_image_optimization() {
+        // Optimize images on upload
+        add_filter('wp_handle_upload', array(__CLASS__, 'optimize_uploaded_image'));
+        
+        // Add lazy loading to images
+        add_filter('the_content', array(__CLASS__, 'add_lazy_loading'));
+        add_filter('post_thumbnail_html', array(__CLASS__, 'add_lazy_loading'));
+    }
+    
+    /**
+     * Optimize uploaded images
+     */
+    public static function optimize_uploaded_image($upload) {
+        if (!isset($upload['file']) || !isset($upload['type'])) {
+            return $upload;
+        }
+        
+        // Only process images
+        if (strpos($upload['type'], 'image/') !== 0) {
+            return $upload;
+        }
+        
+        $file = $upload['file'];
+        
+        // Get image editor
+        $editor = wp_get_image_editor($file);
+        
+        if (is_wp_error($editor)) {
+            return $upload;
+        }
+        
+        // Get original size
+        $size = $editor->get_size();
+        $max_width = 1920;
+        $max_height = 1080;
+        
+        // Resize if larger than max dimensions
+        if ($size['width'] > $max_width || $size['height'] > $max_height) {
+            $editor->resize($max_width, $max_height, false);
+        }
+        
+        // Set quality for compression
+        $editor->set_quality(82);
+        
+        // Save optimized image
+        $saved = $editor->save($file);
+        
+        if (!is_wp_error($saved)) {
+            // Update file size in upload array
+            $upload['file'] = $saved['path'];
+        }
+        
+        return $upload;
+    }
+    
+    /**
+     * Add lazy loading attribute to images
+     */
+    public static function add_lazy_loading($content) {
+        if (empty($content)) {
+            return $content;
+        }
+        
+        // Add loading="lazy" to img tags that don't have it
+        $content = preg_replace(
+            '/<img((?!loading=)[^>]*)>/i',
+            '<img$1 loading="lazy">',
+            $content
+        );
+        
+        return $content;
     }
 }

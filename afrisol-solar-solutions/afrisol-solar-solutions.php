@@ -102,6 +102,9 @@ class Afrisol_Solar_Solutions {
         // Initialize PWA
         Afrisol_PWA::init();
         
+        // Initialize image optimization
+        Afrisol_Assets::init_image_optimization();
+        
         // Add theme support
         add_action('after_setup_theme', array($this, 'add_theme_support'));
         

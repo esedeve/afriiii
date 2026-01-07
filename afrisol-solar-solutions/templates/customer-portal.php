@@ -23,12 +23,12 @@ $tab = isset($_GET['tab']) ? sanitize_text_field($_GET['tab']) : 'dashboard';
                 <!-- Sidebar -->
                 <aside class="afrisol-portal-sidebar afrisol-fade-in">
                     <div class="afrisol-card afrisol-text-center afrisol-mb-3">
-                        <div class="afrisol-card-body">
+                        <div class="afrisol-card-body" style="overflow: hidden;">
                             <div class="afrisol-testimonial-avatar" style="width: 80px; height: 80px; font-size: 2rem; margin: 0 auto 15px;">
                                 <?php echo esc_html(strtoupper(substr($user->first_name, 0, 1) . substr($user->last_name, 0, 1))); ?>
                             </div>
-                            <h4 style="margin-bottom: 5px;"><?php echo esc_html($user->display_name); ?></h4>
-                            <p class="afrisol-text-muted" style="font-size: 0.875rem;"><?php echo esc_html($user->user_email); ?></p>
+                            <h4 style="margin-bottom: 5px; word-wrap: break-word; overflow-wrap: break-word;"><?php echo esc_html($user->display_name); ?></h4>
+                            <p class="afrisol-text-muted" style="font-size: 0.875rem; word-wrap: break-word; overflow-wrap: break-word; white-space: normal; max-width: 100%; overflow: hidden; text-overflow: ellipsis;"><?php echo esc_html($user->user_email); ?></p>
                         </div>
                     </div>
                     

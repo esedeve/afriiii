@@ -768,6 +768,21 @@
     flex-shrink: 0;
 }
 
+.afrisol-portal-sidebar .afrisol-card-body {
+    overflow: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.afrisol-portal-sidebar .afrisol-card-body p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .afrisol-portal-menu {
     background: var(--afrisol-glass-bg);
     backdrop-filter: blur(20px);

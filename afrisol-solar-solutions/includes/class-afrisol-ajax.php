@@ -745,12 +745,80 @@ class Afrisol_Ajax {
     public static function calculate_solar() {
         self::verify_nonce();
         
-        $result = Afrisol_Calculator::calculate($_POST);
+        // Prepare appliances data from form
+        $appliances = array();
+        if (isset($_POST['appliance']) && is_array($_POST['appliance'])) {
+            $appliance_watts = array(
+                'ac_1hp' => 1000,
+                'ac_2hp' => 2000,
+                'fridge' => 150,
+                'freezer' => 200,
+                'tv' => 100,
+                'fan' => 75,
+                'lights' => 50,
+                'pump' => 750,
+                'washer' => 500,
+            );
+            
+            foreach ($_POST['appliance'] as $index => $appliance) {
+                if (!empty($appliance)) {
+                    $watts = isset($appliance_watts[$appliance]) ? $appliance_watts[$appliance] : 100;
+                    $quantity = isset($_POST['quantity'][$index]) ? intval($_POST['quantity'][$index]) : 1;
+                    $hours = isset($_POST['hours'][$index]) ? intval($_POST['hours'][$index]) : 4;
+                    
+                    $appliances[] = array(
+                        'name' => sanitize_text_field($appliance),
+                        'watts' => $watts,
+                        'quantity' => $quantity,
+                        'hours' => $hours,
+                    );
+                }
+            }
+        }
+        
+        // Prepare data for calculator
+        $data = array(
+            'location' => isset($_POST['location']) ? sanitize_text_field(wp_unslash($_POST['location'])) : '',
+            'property_type' => isset($_POST['property_type']) ? sanitize_text_field(wp_unslash($_POST['property_type'])) : 'residential_medium',
+            'monthly_bill' => isset($_POST['monthly_bill']) ? floatval($_POST['monthly_bill']) : 0,
+            'roof_type' => isset($_POST['roof_type']) ? sanitize_text_field(wp_unslash($_POST['roof_type'])) : 'flat',
+            'appliances' => $appliances,
+        );
+        
+        // Map property type to category
+        $property_map = array(
+            'residential_small' => 'residential',
+            'residential_medium' => 'residential',
+            'residential_large' => 'residential',
+            'commercial_small' => 'commercial',
+            'commercial_medium' => 'commercial',
+            'commercial_large' => 'industrial',
+        );
+        
+        if (isset($property_map[$data['property_type']])) {
+            $data['property_type'] = $property_map[$data['property_type']];
+        }
+        
+        $result = Afrisol_Calculator::calculate($data);
         
         if ($result) {
-            wp_send_json_success($result);
+            // Format response for JavaScript
+            $response = array(
+                'system_size' => $result['system_size']['kw'],
+                'estimated_cost' => ($result['cost']['estimated_low'] + $result['cost']['estimated_high']) / 2,
+                'monthly_savings' => $result['savings']['monthly'],
+                'roi_months' => round($result['savings']['roi_years'] * 12),
+                'co2_saved' => $result['environment']['co2_saved_kg'],
+                'panels' => $result['system_size']['panels'],
+                'battery_kwh' => $result['battery']['capacity_kwh'],
+                'inverter_kva' => $result['inverter']['kva'],
+                'daily_kwh' => $result['energy']['daily_kwh'],
+                'recommendations' => $result['recommendations'],
+            );
+            
+            wp_send_json_success($response);
         } else {
-            wp_send_json_error(array('message' => 'Calculation failed'));
+            wp_send_json_error(array('message' => 'Calculation failed. Please fill in either your monthly bill or add appliances.'));
         }
     }
     
