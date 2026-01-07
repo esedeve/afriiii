@@ -63,25 +63,94 @@ class Afrisol_PWA {
                 });
             }
             
+            // Browser Detection
+            function detectBrowser() {
+                const ua = navigator.userAgent;
+                const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+                const isMac = /Macintosh/.test(ua);
+                const isAndroid = /Android/.test(ua);
+                const isSamsung = /SamsungBrowser/.test(ua);
+                const isOpera = /OPR|Opera/.test(ua);
+                const isFirefox = /Firefox/.test(ua);
+                const isEdge = /Edg/.test(ua);
+                const isChrome = /Chrome/.test(ua) && !isOpera && !isEdge && !isSamsung;
+                const isSafari = /Safari/.test(ua) && !isChrome && !isOpera && !isEdge && !isSamsung && !isFirefox;
+                
+                if (isSamsung) return 'samsung';
+                if (isOpera) return 'opera';
+                if (isFirefox) return 'firefox';
+                if (isSafari && isIOS) return 'safari-ios';
+                if (isSafari && isMac) return 'safari-mac';
+                if (isChrome || isEdge) return 'chrome-edge';
+                return 'generic';
+            }
+            
+            function isStandalone() {
+                return window.matchMedia('(display-mode: standalone)').matches || 
+                       window.navigator.standalone === true;
+            }
+            
             // PWA Install Prompt
             let deferredPrompt;
             const installPrompt = document.getElementById('afrisol-pwa-prompt');
+            const browserType = detectBrowser();
             
+            // Show browser-specific instructions
+            function showBrowserInstructions() {
+                const instructions = document.querySelectorAll('.afrisol-pwa-browser');
+                instructions.forEach(el => el.style.display = 'none');
+                
+                const browserEl = document.querySelector('.afrisol-pwa-browser.' + browserType);
+                if (browserEl) {
+                    browserEl.style.display = 'block';
+                } else {
+                    const generic = document.querySelector('.afrisol-pwa-browser.generic');
+                    if (generic) generic.style.display = 'block';
+                }
+                
+                // Update install button for Safari (no native install)
+                const installBtn = document.getElementById('afrisol-pwa-install');
+                if (browserType === 'safari-ios' || browserType === 'safari-mac') {
+                    if (installBtn) {
+                        installBtn.innerHTML = '<i class="fas fa-check"></i> <span>Got It</span>';
+                    }
+                }
+            }
+            
+            // Show prompt based on browser
+            function showInstallPrompt() {
+                if (!installPrompt || localStorage.getItem('afrisol_pwa_dismissed') || isStandalone()) {
+                    return;
+                }
+                
+                showBrowserInstructions();
+                installPrompt.classList.add('show');
+            }
+            
+            // For Chrome/Edge/Opera - capture beforeinstallprompt
             window.addEventListener('beforeinstallprompt', (e) => {
                 e.preventDefault();
                 deferredPrompt = e;
                 
-                // Show install prompt after 3 seconds
+                // Show install prompt after 2 seconds
                 setTimeout(() => {
-                    if (installPrompt && !localStorage.getItem('afrisol_pwa_dismissed')) {
-                        installPrompt.classList.add('show');
+                    showInstallPrompt();
+                }, 2000);
+            });
+            
+            // For Safari and browsers without beforeinstallprompt
+            if (browserType === 'safari-ios' || browserType === 'safari-mac' || browserType === 'firefox' || browserType === 'samsung') {
+                // Show prompt after 3 seconds for these browsers
+                setTimeout(() => {
+                    if (!deferredPrompt) {
+                        showInstallPrompt();
                     }
                 }, 3000);
-            });
+            }
             
             // Install button click
             document.addEventListener('click', function(e) {
-                if (e.target.closest('.afrisol-pwa-install')) {
+                if (e.target.closest('#afrisol-pwa-install')) {
                     if (deferredPrompt) {
                         deferredPrompt.prompt();
                         deferredPrompt.userChoice.then((choiceResult) => {
@@ -93,16 +162,26 @@ class Afrisol_PWA {
                                 installPrompt.classList.remove('show');
                             }
                         });
+                    } else {
+                        // For Safari and other browsers - just close the prompt
+                        if (installPrompt) {
+                            installPrompt.classList.remove('show');
+                        }
                     }
                 }
                 
-                if (e.target.closest('.afrisol-pwa-dismiss')) {
+                if (e.target.closest('#afrisol-pwa-dismiss') || e.target.closest('#afrisol-pwa-close')) {
                     if (installPrompt) {
                         installPrompt.classList.remove('show');
                         localStorage.setItem('afrisol_pwa_dismissed', 'true');
                     }
                 }
             });
+            
+            // Show prompt on first visit if not already shown
+            if (!localStorage.getItem('afrisol_pwa_shown') && !isStandalone()) {
+                localStorage.setItem('afrisol_pwa_shown', 'true');
+            }
         </script>
         <?php
     }
