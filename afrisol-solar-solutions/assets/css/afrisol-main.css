@@ -548,3 +548,92 @@
 .afrisol-stars i.empty {
     color: var(--afrisol-text-muted);
 }
+
+
+/* =========================================
+   Font Awesome Icon Fallback Styles
+   ========================================= */
+.afrisol-wrapper .fas,
+.afrisol-wrapper .fab,
+.afrisol-wrapper .far,
+.afrisol-wrapper .fal,
+.afrisol-wrapper .fad,
+.afrisol-wrapper i[class*="fa-"] {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "FontAwesome", sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.afrisol-wrapper .far {
+    font-weight: 400;
+}
+
+.afrisol-wrapper .fab {
+    font-family: "Font Awesome 6 Brands", "FontAwesome", sans-serif;
+    font-weight: 400;
+}
+
+/* Ensure icons are visible */
+.afrisol-wrapper .fa-sun:before { content: "\f185"; }
+.afrisol-wrapper .fa-user:before { content: "\f007"; }
+.afrisol-wrapper .fa-envelope:before { content: "\f0e0"; }
+.afrisol-wrapper .fa-phone:before { content: "\f095"; }
+.afrisol-wrapper .fa-lock:before { content: "\f023"; }
+.afrisol-wrapper .fa-eye:before { content: "\f06e"; }
+.afrisol-wrapper .fa-eye-slash:before { content: "\f070"; }
+.afrisol-wrapper .fa-heart:before { content: "\f004"; }
+.afrisol-wrapper .fa-star:before { content: "\f005"; }
+.afrisol-wrapper .fa-search:before { content: "\f002"; }
+.afrisol-wrapper .fa-cart-plus:before { content: "\f217"; }
+.afrisol-wrapper .fa-shopping-cart:before { content: "\f07a"; }
+.afrisol-wrapper .fa-sign-in-alt:before { content: "\f2f6"; }
+.afrisol-wrapper .fa-arrow-left:before { content: "\f060"; }
+.afrisol-wrapper .fa-arrow-right:before { content: "\f061"; }
+.afrisol-wrapper .fa-check-circle:before { content: "\f058"; }
+.afrisol-wrapper .fa-times:before { content: "\f00d"; }
+.afrisol-wrapper .fa-bars:before { content: "\f0c9"; }
+.afrisol-wrapper .fa-home:before { content: "\f015"; }
+.afrisol-wrapper .fa-building:before { content: "\f1ad"; }
+.afrisol-wrapper .fa-tools:before { content: "\f7d9"; }
+.afrisol-wrapper .fa-wrench:before { content: "\f0ad"; }
+.afrisol-wrapper .fa-shield-alt:before { content: "\f3ed"; }
+.afrisol-wrapper .fa-comment-alt:before { content: "\f27a"; }
+.afrisol-wrapper .fa-paper-plane:before { content: "\f1d8"; }
+.afrisol-wrapper .fa-map-marker-alt:before { content: "\f3c5"; }
+.afrisol-wrapper .fa-tag:before { content: "\f02b"; }
+.afrisol-wrapper .fa-folder:before { content: "\f07b"; }
+.afrisol-wrapper .fa-box:before { content: "\f466"; }
+.afrisol-wrapper .fa-th-large:before { content: "\f009"; }
+.afrisol-wrapper .fa-list:before { content: "\f03a"; }
+.afrisol-wrapper .fa-exchange-alt:before { content: "\f362"; }
+.afrisol-wrapper .fa-box-open:before { content: "\f49e"; }
+.afrisol-wrapper .fa-solar-panel:before { content: "\f5ba"; }
+.afrisol-wrapper .fa-plus-circle:before { content: "\f055"; }
+.afrisol-wrapper .fa-camera:before { content: "\f030"; }
+.afrisol-wrapper .fa-cloud-upload-alt:before { content: "\f382"; }
+.afrisol-wrapper .fa-wallet:before { content: "\f555"; }
+.afrisol-wrapper .fa-sticky-note:before { content: "\f249"; }
+.afrisol-wrapper .fa-comments:before { content: "\f086"; }
+.afrisol-wrapper .fa-clock:before { content: "\f017"; }
+.afrisol-wrapper .fa-file-alt:before { content: "\f15c"; }
+.afrisol-wrapper .fa-certificate:before { content: "\f0a3"; }
+.afrisol-wrapper .fa-thumbs-up:before { content: "\f164"; }
+.afrisol-wrapper .fa-clipboard-list:before { content: "\f46d"; }
+.afrisol-wrapper .fa-hard-hat:before { content: "\f807"; }
+.afrisol-wrapper .fa-headset:before { content: "\f590"; }
+.afrisol-wrapper .fa-award:before { content: "\f559"; }
+.afrisol-wrapper .fa-leaf:before { content: "\f06c"; }
+.afrisol-wrapper .fa-truck:before { content: "\f0d1"; }
+.afrisol-wrapper .fa-info-circle:before { content: "\f05a"; }
+.afrisol-wrapper .fa-image:before { content: "\f03e"; }
+.afrisol-wrapper .fa-google:before { content: "\f1a0"; }
+.afrisol-wrapper .fa-whatsapp:before { content: "\f232"; }
+.afrisol-wrapper .fa-instagram:before { content: "\f16d"; }
+.afrisol-wrapper .fa-facebook-f:before { content: "\f39e"; }
+.afrisol-wrapper .fa-tiktok:before { content: "\e07b"; }
+.afrisol-wrapper .fa-chevron-up:before { content: "\f077"; }
+

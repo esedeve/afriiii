@@ -53,12 +53,20 @@ class Afrisol_Assets {
             AFRISOL_VERSION
         );
         
-        // Font Awesome Icons
+        // Font Awesome Icons - Using multiple CDN sources for reliability
         wp_enqueue_style(
             'font-awesome',
-            'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css',
+            'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css',
             array(),
-            '6.4.2'
+            '6.5.1'
+        );
+        
+        // Add fallback Font Awesome from jsDelivr if CDNJS fails
+        wp_enqueue_style(
+            'font-awesome-fallback',
+            'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css',
+            array(),
+            '6.5.1'
         );
         
         // Main stylesheet
