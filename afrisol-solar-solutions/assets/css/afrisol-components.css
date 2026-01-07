@@ -154,20 +154,18 @@
 .afrisol-logo-icon {
     width: 45px;
     height: 45px;
-    background: linear-gradient(135deg, var(--afrisol-primary), var(--afrisol-primary-light));
+    background: transparent;
     border-radius: var(--afrisol-radius-full);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: 20px;
+    overflow: hidden;
 }
 
 .afrisol-logo-icon img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    border-radius: var(--afrisol-radius-full);
 }
 
 .afrisol-logo-text {
@@ -382,6 +380,22 @@
     margin-top: 3px;
 }
 
+.afrisol-footer-contact svg {
+    color: var(--afrisol-primary);
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.afrisol-footer-contact a {
+    color: var(--afrisol-text-muted);
+    text-decoration: none;
+    transition: color var(--afrisol-transition-fast);
+}
+
+.afrisol-footer-contact a:hover {
+    color: var(--afrisol-primary);
+}
+
 .afrisol-social-links {
     display: flex;
     gap: 12px;
@@ -400,6 +414,10 @@
     color: var(--afrisol-text-light);
     text-decoration: none;
     transition: all var(--afrisol-transition-normal);
+}
+
+.afrisol-social-links a svg {
+    fill: currentColor;
 }
 
 .afrisol-social-links a:hover {
@@ -591,6 +609,12 @@
     font-size: 28px;
     color: white;
     box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+}
+
+.afrisol-service-icon svg {
+    width: 28px;
+    height: 28px;
+    fill: white;
 }
 
 .afrisol-service-card h3 {
@@ -912,26 +936,52 @@
 
 .afrisol-form-group input::placeholder,
 .afrisol-form-group textarea::placeholder {
-    color: rgba(160, 160, 160, 0.9);
-    opacity: 1;
+    color: #b8b8b8 !important;
+    opacity: 1 !important;
 }
 
 .afrisol-form-group input::-webkit-input-placeholder,
 .afrisol-form-group textarea::-webkit-input-placeholder {
-    color: rgba(160, 160, 160, 0.9);
-    opacity: 1;
+    color: #b8b8b8 !important;
+    opacity: 1 !important;
 }
 
 .afrisol-form-group input::-moz-placeholder,
 .afrisol-form-group textarea::-moz-placeholder {
-    color: rgba(160, 160, 160, 0.9);
-    opacity: 1;
+    color: #b8b8b8 !important;
+    opacity: 1 !important;
 }
 
 .afrisol-form-group input:-ms-input-placeholder,
 .afrisol-form-group textarea:-ms-input-placeholder {
-    color: rgba(160, 160, 160, 0.9);
-    opacity: 1;
+    color: #b8b8b8 !important;
+    opacity: 1 !important;
+}
+
+/* Global placeholder styles for all Afrisol forms */
+.afrisol-wrapper input::placeholder,
+.afrisol-wrapper textarea::placeholder,
+.afrisol-wrapper select::placeholder {
+    color: #b8b8b8 !important;
+    opacity: 1 !important;
+}
+
+.afrisol-wrapper input::-webkit-input-placeholder,
+.afrisol-wrapper textarea::-webkit-input-placeholder {
+    color: #b8b8b8 !important;
+    opacity: 1 !important;
+}
+
+.afrisol-wrapper input::-moz-placeholder,
+.afrisol-wrapper textarea::-moz-placeholder {
+    color: #b8b8b8 !important;
+    opacity: 1 !important;
+}
+
+.afrisol-wrapper input:-ms-input-placeholder,
+.afrisol-wrapper textarea:-ms-input-placeholder {
+    color: #b8b8b8 !important;
+    opacity: 1 !important;
 }
 
 .afrisol-form-group textarea {
@@ -1069,6 +1119,11 @@
 .afrisol-scroll-top i {
     color: var(--afrisol-primary);
     font-size: 1rem;
+    z-index: 1;
+}
+
+.afrisol-scroll-top .afrisol-scroll-arrow {
+    color: var(--afrisol-primary);
     z-index: 1;
 }
 
