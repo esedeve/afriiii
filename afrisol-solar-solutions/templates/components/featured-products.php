@@ -88,7 +88,7 @@ if (empty($products)) {
                                         <?php endif; ?>
                                     <?php endfor; ?>
                                 </div>
-                                <span class="count">(<?php echo esc_html(rand(10, 50)); ?>)</span>
+                                <span class="count">(<?php echo esc_html(get_post_meta($product->ID, '_afrisol_review_count', true) ?: 0); ?>)</span>
                             </div>
                             
                             <div class="afrisol-product-price">

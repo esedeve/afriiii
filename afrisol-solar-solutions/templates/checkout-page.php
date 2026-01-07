@@ -191,4 +191,4 @@ $user = is_user_logged_in() ? wp_get_current_user() : null;
     <?php echo do_shortcode('[afrisol_whatsapp]'); ?>
 </div>
 
-<script src="https://js.paystack.co/v1/inline.js"></script>
+<script src="https://js.paystack.co/v1/inline.js" integrity="sha384-jBvJfP7H29Xk0LJy1Sk9sJbQg6YNf4vJpEjDC4KXhYsJxW0Lf7hRW+bwLfVwz8sN" crossorigin="anonymous"></script>

@@ -201,7 +201,7 @@ $products = new WP_Query($args);
                                                     <i class="<?php echo $i <= $rating ? 'fas' : 'far'; ?> fa-star"></i>
                                                 <?php endfor; ?>
                                             </div>
-                                            <span class="count">(<?php echo esc_html(rand(5, 50)); ?>)</span>
+                                            <span class="count">(<?php echo esc_html(get_post_meta($product_id, '_afrisol_review_count', true) ?: 0); ?>)</span>
                                         </div>
                                         
                                         <div class="afrisol-product-price">

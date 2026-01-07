@@ -108,7 +108,7 @@ $related = get_posts(array(
                                     <i class="<?php echo $i <= $rating ? 'fas' : 'far'; ?> fa-star"></i>
                                 <?php endfor; ?>
                             </div>
-                            <span>(<?php echo esc_html(rand(10, 100)); ?> reviews)</span>
+                            <span>(<?php echo esc_html(get_post_meta($product_id, '_afrisol_review_count', true) ?: 0); ?> reviews)</span>
                         </div>
                         
                         <?php if ($brand): ?>
@@ -187,7 +187,7 @@ $related = get_posts(array(
                 <div class="afrisol-tab-panel active" data-tab-panel="description">
                     <div class="afrisol-card">
                         <div class="afrisol-card-body">
-                            <?php echo wpautop(esc_html($product->post_content)); ?>
+                            <?php echo wp_kses_post(wpautop($product->post_content)); ?>
                         </div>
                     </div>
                 </div>
