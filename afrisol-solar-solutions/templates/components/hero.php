@@ -7,6 +7,21 @@ $settings = get_option('afrisol_settings', array());
 $hero_heading = isset($settings['hero_heading']) ? $settings['hero_heading'] : 'Solar Solutions for a Sustainable Africa';
 $hero_subheading = isset($settings['hero_subheading']) ? $settings['hero_subheading'] : 'Empowering homes and businesses with clean, affordable solar energy. Quality installations, expert maintenance, and innovative solar mobility solutions.';
 $hero_image = isset($settings['hero_image']) ? $settings['hero_image'] : '';
+$logo_url = isset($settings['logo']) ? $settings['logo'] : '';
+
+// Function to wrap each character in a span for animation
+function afrisol_animate_text($text) {
+    $result = '';
+    $chars = preg_split('//u', $text, -1, PREG_SPLIT_NO_EMPTY);
+    foreach ($chars as $char) {
+        if ($char === ' ') {
+            $result .= ' ';
+        } else {
+            $result .= '<span class="letter">' . esc_html($char) . '</span>';
+        }
+    }
+    return $result;
+}
 ?>
 <section class="afrisol-hero afrisol-section-lg" id="hero">
     <div class="afrisol-container">
@@ -17,7 +32,7 @@ $hero_image = isset($settings['hero_image']) ? $settings['hero_image'] : '';
                     <span>#1 Solar Solutions in Africa</span>
                 </div>
                 
-                <h1><?php echo esc_html($hero_heading); ?></h1>
+                <h1 class="afrisol-hero-animated-heading"><?php echo afrisol_animate_text($hero_heading); ?></h1>
                 <p><?php echo esc_html($hero_subheading); ?></p>
                 
                 <div class="afrisol-hero-buttons">
@@ -33,7 +48,9 @@ $hero_image = isset($settings['hero_image']) ? $settings['hero_image'] : '';
             <div class="afrisol-hero-image afrisol-fade-in">
                 <div class="afrisol-hero-image-wrapper">
                     <?php if ($hero_image): ?>
-                        <img src="<?php echo esc_url($hero_image); ?>" alt="Solar Solutions">
+                        <img src="<?php echo esc_url($hero_image); ?>" alt="Solar Solutions" loading="lazy">
+                    <?php elseif ($logo_url): ?>
+                        <img src="<?php echo esc_url($logo_url); ?>" alt="Afrisol" loading="lazy" style="object-fit: contain; padding: 40px;">
                     <?php else: ?>
                         <div class="afrisol-image-placeholder">
                             <i class="fas fa-image"></i>

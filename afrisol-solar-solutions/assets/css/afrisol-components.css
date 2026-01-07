@@ -41,14 +41,17 @@
 
 .afrisol-btn-primary {
     background: linear-gradient(135deg, var(--afrisol-primary), var(--afrisol-primary-light));
-    color: white;
+    color: var(--afrisol-secondary) !important;
     box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    font-weight: 700;
 }
 
 .afrisol-btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
-    color: white;
+    background: var(--afrisol-secondary);
+    color: var(--afrisol-primary) !important;
+    border: 2px solid var(--afrisol-primary);
 }
 
 .afrisol-btn-secondary {
@@ -72,7 +75,7 @@
 
 .afrisol-btn-outline:hover {
     background: var(--afrisol-primary);
-    color: white;
+    color: var(--afrisol-secondary) !important;
 }
 
 .afrisol-btn-ghost {
@@ -454,10 +457,51 @@
     font-size: 3.5rem;
     line-height: 1.1;
     margin-bottom: 20px;
-    background: linear-gradient(135deg, var(--afrisol-primary), var(--afrisol-primary-light));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--afrisol-primary);
+}
+
+/* Hero Heading Letter Animation */
+.afrisol-hero-animated-heading {
+    display: inline;
+}
+
+.afrisol-hero-animated-heading .letter {
+    display: inline-block;
+    animation: letterColorPulse 3s ease-in-out infinite;
+    color: var(--afrisol-primary);
+}
+
+.afrisol-hero-animated-heading .letter:nth-child(1) { animation-delay: 0s; }
+.afrisol-hero-animated-heading .letter:nth-child(2) { animation-delay: 0.05s; }
+.afrisol-hero-animated-heading .letter:nth-child(3) { animation-delay: 0.1s; }
+.afrisol-hero-animated-heading .letter:nth-child(4) { animation-delay: 0.15s; }
+.afrisol-hero-animated-heading .letter:nth-child(5) { animation-delay: 0.2s; }
+.afrisol-hero-animated-heading .letter:nth-child(6) { animation-delay: 0.25s; }
+.afrisol-hero-animated-heading .letter:nth-child(7) { animation-delay: 0.3s; }
+.afrisol-hero-animated-heading .letter:nth-child(8) { animation-delay: 0.35s; }
+.afrisol-hero-animated-heading .letter:nth-child(9) { animation-delay: 0.4s; }
+.afrisol-hero-animated-heading .letter:nth-child(10) { animation-delay: 0.45s; }
+.afrisol-hero-animated-heading .letter:nth-child(11) { animation-delay: 0.5s; }
+.afrisol-hero-animated-heading .letter:nth-child(12) { animation-delay: 0.55s; }
+.afrisol-hero-animated-heading .letter:nth-child(13) { animation-delay: 0.6s; }
+.afrisol-hero-animated-heading .letter:nth-child(14) { animation-delay: 0.65s; }
+.afrisol-hero-animated-heading .letter:nth-child(15) { animation-delay: 0.7s; }
+.afrisol-hero-animated-heading .letter:nth-child(16) { animation-delay: 0.75s; }
+.afrisol-hero-animated-heading .letter:nth-child(17) { animation-delay: 0.8s; }
+.afrisol-hero-animated-heading .letter:nth-child(18) { animation-delay: 0.85s; }
+.afrisol-hero-animated-heading .letter:nth-child(19) { animation-delay: 0.9s; }
+.afrisol-hero-animated-heading .letter:nth-child(20) { animation-delay: 0.95s; }
+.afrisol-hero-animated-heading .letter:nth-child(n+21) { animation-delay: 1s; }
+
+@keyframes letterColorPulse {
+    0%, 100% { 
+        color: var(--afrisol-primary);
+        text-shadow: none;
+    }
+    50% { 
+        color: var(--afrisol-primary-light);
+        text-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+    }
 }
 
 .afrisol-hero p {
@@ -868,7 +912,26 @@
 
 .afrisol-form-group input::placeholder,
 .afrisol-form-group textarea::placeholder {
-    color: var(--afrisol-text-muted);
+    color: rgba(160, 160, 160, 0.9);
+    opacity: 1;
+}
+
+.afrisol-form-group input::-webkit-input-placeholder,
+.afrisol-form-group textarea::-webkit-input-placeholder {
+    color: rgba(160, 160, 160, 0.9);
+    opacity: 1;
+}
+
+.afrisol-form-group input::-moz-placeholder,
+.afrisol-form-group textarea::-moz-placeholder {
+    color: rgba(160, 160, 160, 0.9);
+    opacity: 1;
+}
+
+.afrisol-form-group input:-ms-input-placeholder,
+.afrisol-form-group textarea:-ms-input-placeholder {
+    color: rgba(160, 160, 160, 0.9);
+    opacity: 1;
 }
 
 .afrisol-form-group textarea {

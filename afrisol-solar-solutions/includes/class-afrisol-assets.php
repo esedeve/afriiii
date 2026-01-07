@@ -169,12 +169,17 @@ class Afrisol_Assets {
      * Add PWA meta tags
      */
     public static function add_pwa_meta() {
+        $settings = get_option('afrisol_settings', array());
+        $logo_url = isset($settings['logo']) && !empty($settings['logo']) ? $settings['logo'] : AFRISOL_PLUGIN_URL . 'assets/images/afrisol-logo.webp';
+        
         echo '<link rel="manifest" href="' . esc_url(AFRISOL_PLUGIN_URL . 'assets/manifest.json') . '">' . "\n";
         echo '<meta name="theme-color" content="#1a1a2e">' . "\n";
         echo '<meta name="apple-mobile-web-app-capable" content="yes">' . "\n";
         echo '<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">' . "\n";
         echo '<meta name="apple-mobile-web-app-title" content="Afrisol">' . "\n";
-        echo '<link rel="apple-touch-icon" href="' . esc_url(AFRISOL_PLUGIN_URL . 'assets/images/logo-192.png') . '">' . "\n";
+        echo '<link rel="apple-touch-icon" href="' . esc_url($logo_url) . '">' . "\n";
+        echo '<link rel="icon" type="image/webp" href="' . esc_url($logo_url) . '">' . "\n";
+        echo '<link rel="shortcut icon" type="image/webp" href="' . esc_url($logo_url) . '">' . "\n";
     }
     
     /**

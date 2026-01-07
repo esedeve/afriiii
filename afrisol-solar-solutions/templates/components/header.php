@@ -4,7 +4,7 @@
  */
 if (!defined('ABSPATH')) exit;
 $settings = get_option('afrisol_settings', array());
-$logo_url = isset($settings['logo']) ? $settings['logo'] : '';
+$logo_url = isset($settings['logo']) && !empty($settings['logo']) ? $settings['logo'] : AFRISOL_PLUGIN_URL . 'assets/images/afrisol-logo.webp';
 $company_name = isset($settings['company_name']) ? $settings['company_name'] : 'Afrisol';
 $cart_count = class_exists('Afrisol_Cart') ? Afrisol_Cart::get_count() : 0;
 ?>
@@ -13,11 +13,7 @@ $cart_count = class_exists('Afrisol_Cart') ? Afrisol_Cart::get_count() : 0;
         <div class="afrisol-header-inner">
             <a href="<?php echo esc_url(home_url('/afrisol-home/')); ?>" class="afrisol-logo">
                 <div class="afrisol-logo-icon">
-                    <?php if ($logo_url): ?>
-                        <img src="<?php echo esc_url($logo_url); ?>" alt="<?php echo esc_attr($company_name); ?>">
-                    <?php else: ?>
-                        <i class="fas fa-sun"></i>
-                    <?php endif; ?>
+                    <img src="<?php echo esc_url($logo_url); ?>" alt="<?php echo esc_attr($company_name); ?>">
                 </div>
                 <span class="afrisol-logo-text"><?php echo esc_html(strtoupper($company_name)); ?></span>
             </a>

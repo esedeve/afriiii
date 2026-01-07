@@ -7,12 +7,12 @@ $settings = get_option('afrisol_settings', array());
 $company_name = isset($settings['company_name']) ? $settings['company_name'] : 'Afrisol';
 $tagline = isset($settings['tagline']) ? $settings['tagline'] : 'Solar Solutions for a Sustainable Africa';
 $address = isset($settings['address']) ? $settings['address'] : 'Suite 15C, Al-Noor Shopping Complex, Wuse 2, Abuja.';
-$phone = isset($settings['phone']) ? $settings['phone'] : '+234 XXX XXX XXXX';
+$phone = isset($settings['phone']) && $settings['phone'] !== '+234 XXX XXX XXXX' ? $settings['phone'] : '+234 803 221 2827';
 $email = isset($settings['email']) ? $settings['email'] : 'info@afrisol.com';
 $facebook = isset($settings['facebook']) ? $settings['facebook'] : '#';
 $instagram = isset($settings['instagram']) ? $settings['instagram'] : '#';
 $tiktok = isset($settings['tiktok']) ? $settings['tiktok'] : '#';
-$logo_url = isset($settings['logo']) ? $settings['logo'] : '';
+$logo_url = isset($settings['logo']) && !empty($settings['logo']) ? $settings['logo'] : AFRISOL_PLUGIN_URL . 'assets/images/afrisol-logo.webp';
 ?>
 <footer class="afrisol-footer">
     <div class="afrisol-container">
@@ -20,11 +20,7 @@ $logo_url = isset($settings['logo']) ? $settings['logo'] : '';
             <div class="afrisol-footer-brand">
                 <a href="<?php echo esc_url(home_url('/afrisol-home/')); ?>" class="afrisol-logo">
                     <div class="afrisol-logo-icon">
-                        <?php if ($logo_url): ?>
-                            <img src="<?php echo esc_url($logo_url); ?>" alt="<?php echo esc_attr($company_name); ?>">
-                        <?php else: ?>
-                            <i class="fas fa-sun"></i>
-                        <?php endif; ?>
+                        <img src="<?php echo esc_url($logo_url); ?>" alt="<?php echo esc_attr($company_name); ?>">
                     </div>
                     <span class="afrisol-logo-text"><?php echo esc_html(strtoupper($company_name)); ?></span>
                 </a>
