@@ -86,7 +86,7 @@ $logo_url = isset($settings['logo']) && !empty($settings['logo']) ? $settings['l
         </div>
         
         <div class="afrisol-footer-bottom">
-            <p>&copy; <?php echo esc_html(gmdate('Y')); ?> <?php echo esc_html($company_name); ?>. All rights reserved. | Powered by Clean Energy</p>
+            <p>&copy; <?php echo esc_html(gmdate('Y')); ?> <?php echo esc_html($company_name); ?>. All rights reserved. | Powered by BendlessTech</p>
         </div>
     </div>
 </footer>

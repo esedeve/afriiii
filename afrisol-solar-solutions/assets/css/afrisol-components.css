@@ -995,10 +995,38 @@
 .afrisol-form-group select {
     cursor: pointer;
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23a0a0a0' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-color: rgba(26, 26, 46, 0.95) !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ff6b35' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 15px center;
     padding-right: 40px;
+}
+
+/* Dropdown/Select Options Styling */
+.afrisol-form-group select option {
+    background-color: #1a1a2e !important;
+    color: #ff6b35 !important;
+    padding: 12px 16px;
+}
+
+.afrisol-form-group select option:hover,
+.afrisol-form-group select option:focus,
+.afrisol-form-group select option:checked {
+    background-color: #ff6b35 !important;
+    color: #1a1a2e !important;
+}
+
+/* Global select/dropdown styling */
+.afrisol-wrapper select,
+select.afrisol-select {
+    background-color: rgba(26, 26, 46, 0.95) !important;
+}
+
+.afrisol-wrapper select option,
+select.afrisol-select option {
+    background-color: #1a1a2e !important;
+    color: #ff6b35 !important;
+    padding: 10px;
 }
 
 .afrisol-form-hint {
