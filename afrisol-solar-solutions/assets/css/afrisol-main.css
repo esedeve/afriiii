@@ -1,0 +1,639 @@
+/**
+ * Afrisol Main Stylesheet
+ * Solar Solutions for a Sustainable Africa
+ */
+
+/* =========================================
+   CSS Variables & Root Styles
+   ========================================= */
+:root {
+    /* Colors */
+    --afrisol-primary: #FF6B35;
+    --afrisol-primary-dark: #e55a28;
+    --afrisol-primary-light: #ff8c5a;
+    --afrisol-secondary: #1a1a2e;
+    --afrisol-secondary-dark: #16213e;
+    --afrisol-secondary-light: #0f3460;
+    
+    /* Glass Effect Colors */
+    --afrisol-glass-bg: rgba(255, 255, 255, 0.08);
+    --afrisol-glass-border: rgba(255, 255, 255, 0.18);
+    --afrisol-glass-shadow: rgba(0, 0, 0, 0.3);
+    
+    /* Text Colors */
+    --afrisol-text-light: #e8e8e8;
+    --afrisol-text-muted: #a0a0a0;
+    --afrisol-text-dark: #1a1a1a;
+    
+    /* Status Colors */
+    --afrisol-success: #10b981;
+    --afrisol-warning: #f59e0b;
+    --afrisol-error: #ef4444;
+    --afrisol-info: #3b82f6;
+    
+    /* Typography */
+    --afrisol-font-heading: 'Montserrat', sans-serif;
+    --afrisol-font-body: 'Open Sans', sans-serif;
+    
+    /* Spacing */
+    --afrisol-spacing-xs: 0.25rem;
+    --afrisol-spacing-sm: 0.5rem;
+    --afrisol-spacing-md: 1rem;
+    --afrisol-spacing-lg: 1.5rem;
+    --afrisol-spacing-xl: 2rem;
+    --afrisol-spacing-2xl: 3rem;
+    --afrisol-spacing-3xl: 4rem;
+    
+    /* Border Radius */
+    --afrisol-radius-sm: 4px;
+    --afrisol-radius-md: 8px;
+    --afrisol-radius-lg: 12px;
+    --afrisol-radius-xl: 20px;
+    --afrisol-radius-full: 50%;
+    
+    /* Transitions */
+    --afrisol-transition-fast: 0.15s ease;
+    --afrisol-transition-normal: 0.3s ease;
+    --afrisol-transition-slow: 0.5s ease;
+    
+    /* Shadows */
+    --afrisol-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --afrisol-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --afrisol-shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.2);
+    --afrisol-shadow-glow: 0 0 30px rgba(255, 107, 53, 0.3);
+    
+    /* Z-Index Layers */
+    --afrisol-z-dropdown: 100;
+    --afrisol-z-sticky: 200;
+    --afrisol-z-fixed: 300;
+    --afrisol-z-modal: 400;
+    --afrisol-z-tooltip: 500;
+}
+
+/* =========================================
+   Reset & Base Styles
+   ========================================= */
+.afrisol-page {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.afrisol-page *,
+.afrisol-page *::before,
+.afrisol-page *::after {
+    box-sizing: inherit;
+}
+
+.afrisol-wrapper {
+    font-family: var(--afrisol-font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--afrisol-text-light);
+    background: linear-gradient(135deg, var(--afrisol-secondary) 0%, var(--afrisol-secondary-dark) 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.afrisol-wrapper::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 107, 53, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* =========================================
+   Typography
+   ========================================= */
+.afrisol-wrapper h1,
+.afrisol-wrapper h2,
+.afrisol-wrapper h3,
+.afrisol-wrapper h4,
+.afrisol-wrapper h5,
+.afrisol-wrapper h6 {
+    font-family: var(--afrisol-font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 var(--afrisol-spacing-md);
+    color: var(--afrisol-primary);
+}
+
+.afrisol-wrapper h1 { font-size: 3rem; }
+.afrisol-wrapper h2 { font-size: 2.5rem; }
+.afrisol-wrapper h3 { font-size: 1.75rem; }
+.afrisol-wrapper h4 { font-size: 1.25rem; }
+.afrisol-wrapper h5 { font-size: 1.1rem; }
+.afrisol-wrapper h6 { font-size: 1rem; }
+
+.afrisol-wrapper p {
+    margin: 0 0 var(--afrisol-spacing-md);
+    color: var(--afrisol-text-muted);
+}
+
+.afrisol-wrapper a {
+    color: var(--afrisol-primary);
+    text-decoration: none;
+    transition: color var(--afrisol-transition-fast);
+}
+
+.afrisol-wrapper a:hover {
+    color: var(--afrisol-primary-light);
+}
+
+/* =========================================
+   Container & Layout
+   ========================================= */
+.afrisol-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--afrisol-spacing-xl);
+    position: relative;
+    z-index: 1;
+}
+
+.afrisol-container-sm {
+    max-width: 800px;
+}
+
+.afrisol-container-md {
+    max-width: 1000px;
+}
+
+.afrisol-container-lg {
+    max-width: 1200px;
+}
+
+.afrisol-container-full {
+    max-width: 100%;
+    padding: 0;
+}
+
+.afrisol-section {
+    padding: var(--afrisol-spacing-3xl) 0;
+    position: relative;
+    z-index: 1;
+}
+
+.afrisol-section-sm {
+    padding: var(--afrisol-spacing-2xl) 0;
+}
+
+.afrisol-section-lg {
+    padding: 100px 0;
+}
+
+.afrisol-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 calc(var(--afrisol-spacing-md) * -1);
+}
+
+.afrisol-col {
+    flex: 1;
+    padding: 0 var(--afrisol-spacing-md);
+}
+
+.afrisol-col-2 { flex: 0 0 16.666%; max-width: 16.666%; }
+.afrisol-col-3 { flex: 0 0 25%; max-width: 25%; }
+.afrisol-col-4 { flex: 0 0 33.333%; max-width: 33.333%; }
+.afrisol-col-5 { flex: 0 0 41.666%; max-width: 41.666%; }
+.afrisol-col-6 { flex: 0 0 50%; max-width: 50%; }
+.afrisol-col-7 { flex: 0 0 58.333%; max-width: 58.333%; }
+.afrisol-col-8 { flex: 0 0 66.666%; max-width: 66.666%; }
+.afrisol-col-9 { flex: 0 0 75%; max-width: 75%; }
+.afrisol-col-10 { flex: 0 0 83.333%; max-width: 83.333%; }
+.afrisol-col-12 { flex: 0 0 100%; max-width: 100%; }
+
+/* =========================================
+   Grid System
+   ========================================= */
+.afrisol-grid {
+    display: grid;
+    gap: var(--afrisol-spacing-lg);
+}
+
+.afrisol-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.afrisol-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.afrisol-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* =========================================
+   Glassmorphism Card
+   ========================================= */
+.afrisol-card {
+    background: var(--afrisol-glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-xl);
+    padding: var(--afrisol-spacing-xl);
+    transition: transform var(--afrisol-transition-normal), box-shadow var(--afrisol-transition-normal);
+}
+
+.afrisol-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(255, 107, 53, 0.1);
+}
+
+.afrisol-card-body {
+    padding: var(--afrisol-spacing-lg);
+}
+
+.afrisol-card-header {
+    padding: var(--afrisol-spacing-lg);
+    border-bottom: 1px solid var(--afrisol-glass-border);
+}
+
+.afrisol-card-footer {
+    padding: var(--afrisol-spacing-lg);
+    border-top: 1px solid var(--afrisol-glass-border);
+}
+
+/* =========================================
+   Section Headers
+   ========================================= */
+.afrisol-section-header {
+    text-align: center;
+    margin-bottom: var(--afrisol-spacing-3xl);
+}
+
+.afrisol-section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--afrisol-spacing-md);
+}
+
+.afrisol-section-header p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.afrisol-section-header .afrisol-badge {
+    margin-bottom: var(--afrisol-spacing-md);
+}
+
+/* =========================================
+   Utility Classes
+   ========================================= */
+.afrisol-text-center { text-align: center; }
+.afrisol-text-left { text-align: left; }
+.afrisol-text-right { text-align: right; }
+
+.afrisol-text-primary { color: var(--afrisol-primary); }
+.afrisol-text-light { color: var(--afrisol-text-light); }
+.afrisol-text-muted { color: var(--afrisol-text-muted); }
+
+.afrisol-bg-primary { background-color: var(--afrisol-primary); }
+.afrisol-bg-secondary { background-color: var(--afrisol-secondary); }
+.afrisol-bg-glass { background: var(--afrisol-glass-bg); }
+
+.afrisol-flex { display: flex; }
+.afrisol-flex-center { display: flex; align-items: center; justify-content: center; }
+.afrisol-flex-between { display: flex; align-items: center; justify-content: space-between; }
+.afrisol-flex-wrap { flex-wrap: wrap; }
+.afrisol-flex-col { flex-direction: column; }
+
+.afrisol-gap-sm { gap: var(--afrisol-spacing-sm); }
+.afrisol-gap-md { gap: var(--afrisol-spacing-md); }
+.afrisol-gap-lg { gap: var(--afrisol-spacing-lg); }
+.afrisol-gap-xl { gap: var(--afrisol-spacing-xl); }
+
+.afrisol-mt-0 { margin-top: 0; }
+.afrisol-mt-1 { margin-top: var(--afrisol-spacing-sm); }
+.afrisol-mt-2 { margin-top: var(--afrisol-spacing-md); }
+.afrisol-mt-3 { margin-top: var(--afrisol-spacing-lg); }
+.afrisol-mt-4 { margin-top: var(--afrisol-spacing-xl); }
+.afrisol-mt-5 { margin-top: var(--afrisol-spacing-2xl); }
+
+.afrisol-mb-0 { margin-bottom: 0; }
+.afrisol-mb-1 { margin-bottom: var(--afrisol-spacing-sm); }
+.afrisol-mb-2 { margin-bottom: var(--afrisol-spacing-md); }
+.afrisol-mb-3 { margin-bottom: var(--afrisol-spacing-lg); }
+.afrisol-mb-4 { margin-bottom: var(--afrisol-spacing-xl); }
+.afrisol-mb-5 { margin-bottom: var(--afrisol-spacing-2xl); }
+
+.afrisol-pt-0 { padding-top: 0; }
+.afrisol-pt-1 { padding-top: var(--afrisol-spacing-sm); }
+.afrisol-pt-2 { padding-top: var(--afrisol-spacing-md); }
+.afrisol-pt-3 { padding-top: var(--afrisol-spacing-lg); }
+.afrisol-pt-4 { padding-top: var(--afrisol-spacing-xl); }
+.afrisol-pt-5 { padding-top: var(--afrisol-spacing-2xl); }
+
+.afrisol-pb-0 { padding-bottom: 0; }
+.afrisol-pb-1 { padding-bottom: var(--afrisol-spacing-sm); }
+.afrisol-pb-2 { padding-bottom: var(--afrisol-spacing-md); }
+.afrisol-pb-3 { padding-bottom: var(--afrisol-spacing-lg); }
+.afrisol-pb-4 { padding-bottom: var(--afrisol-spacing-xl); }
+.afrisol-pb-5 { padding-bottom: var(--afrisol-spacing-2xl); }
+
+.afrisol-hidden { display: none !important; }
+.afrisol-visible { display: block !important; }
+
+.afrisol-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* =========================================
+   Image Placeholder
+   ========================================= */
+.afrisol-image-placeholder {
+    background: var(--afrisol-glass-bg);
+    border: 2px dashed var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    color: var(--afrisol-text-muted);
+    font-size: 0.875rem;
+    text-align: center;
+    padding: var(--afrisol-spacing-lg);
+}
+
+.afrisol-image-placeholder i {
+    font-size: 3rem;
+    margin-bottom: var(--afrisol-spacing-md);
+    opacity: 0.5;
+}
+
+/* =========================================
+   Badge
+   ========================================= */
+.afrisol-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--afrisol-spacing-sm);
+    background: var(--afrisol-glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--afrisol-glass-border);
+    padding: var(--afrisol-spacing-sm) var(--afrisol-spacing-md);
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--afrisol-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.afrisol-badge-primary {
+    background: linear-gradient(135deg, var(--afrisol-primary), var(--afrisol-primary-light));
+    border: none;
+}
+
+.afrisol-badge-success {
+    background: var(--afrisol-success);
+    border: none;
+}
+
+.afrisol-badge-warning {
+    background: var(--afrisol-warning);
+    color: var(--afrisol-text-dark);
+    border: none;
+}
+
+.afrisol-badge-error {
+    background: var(--afrisol-error);
+    border: none;
+}
+
+/* =========================================
+   Toast Notifications
+   ========================================= */
+.afrisol-toast-container {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    z-index: var(--afrisol-z-tooltip);
+    display: flex;
+    flex-direction: column;
+    gap: var(--afrisol-spacing-sm);
+}
+
+.afrisol-toast {
+    background: var(--afrisol-glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-lg);
+    padding: var(--afrisol-spacing-md) var(--afrisol-spacing-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--afrisol-spacing-md);
+    min-width: 300px;
+    max-width: 400px;
+    animation: afrisol-slide-in 0.3s ease;
+}
+
+.afrisol-toast.success { border-left: 4px solid var(--afrisol-success); }
+.afrisol-toast.error { border-left: 4px solid var(--afrisol-error); }
+.afrisol-toast.warning { border-left: 4px solid var(--afrisol-warning); }
+.afrisol-toast.info { border-left: 4px solid var(--afrisol-info); }
+
+.afrisol-toast-icon {
+    font-size: 1.25rem;
+}
+
+.afrisol-toast.success .afrisol-toast-icon { color: var(--afrisol-success); }
+.afrisol-toast.error .afrisol-toast-icon { color: var(--afrisol-error); }
+.afrisol-toast.warning .afrisol-toast-icon { color: var(--afrisol-warning); }
+.afrisol-toast.info .afrisol-toast-icon { color: var(--afrisol-info); }
+
+.afrisol-toast-message {
+    flex: 1;
+    font-size: 0.875rem;
+}
+
+.afrisol-toast-close {
+    background: none;
+    border: none;
+    color: var(--afrisol-text-muted);
+    cursor: pointer;
+    padding: 0;
+    font-size: 1rem;
+}
+
+@keyframes afrisol-slide-in {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* =========================================
+   Loading Spinner
+   ========================================= */
+.afrisol-loading {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.afrisol-spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid var(--afrisol-glass-border);
+    border-top-color: var(--afrisol-primary);
+    border-radius: 50%;
+    animation: afrisol-spin 0.8s linear infinite;
+}
+
+.afrisol-spinner-lg {
+    width: 48px;
+    height: 48px;
+    border-width: 4px;
+}
+
+@keyframes afrisol-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* =========================================
+   Fade In Animation
+   ========================================= */
+.afrisol-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.afrisol-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   Star Rating
+   ========================================= */
+.afrisol-stars {
+    display: inline-flex;
+    gap: 2px;
+}
+
+.afrisol-stars i {
+    color: #FFD700;
+    font-size: 1rem;
+}
+
+.afrisol-stars i.empty {
+    color: var(--afrisol-text-muted);
+}
+
+
+/* =========================================
+   Font Awesome Icon Fallback Styles
+   ========================================= */
+.afrisol-wrapper .fas,
+.afrisol-wrapper .fab,
+.afrisol-wrapper .far,
+.afrisol-wrapper .fal,
+.afrisol-wrapper .fad,
+.afrisol-wrapper i[class*="fa-"] {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "FontAwesome", sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.afrisol-wrapper .far {
+    font-weight: 400;
+}
+
+.afrisol-wrapper .fab {
+    font-family: "Font Awesome 6 Brands", "FontAwesome", sans-serif;
+    font-weight: 400;
+}
+
+/* Ensure icons are visible */
+.afrisol-wrapper .fa-sun:before { content: "\f185"; }
+.afrisol-wrapper .fa-user:before { content: "\f007"; }
+.afrisol-wrapper .fa-envelope:before { content: "\f0e0"; }
+.afrisol-wrapper .fa-phone:before { content: "\f095"; }
+.afrisol-wrapper .fa-lock:before { content: "\f023"; }
+.afrisol-wrapper .fa-eye:before { content: "\f06e"; }
+.afrisol-wrapper .fa-eye-slash:before { content: "\f070"; }
+.afrisol-wrapper .fa-heart:before { content: "\f004"; }
+.afrisol-wrapper .fa-star:before { content: "\f005"; }
+.afrisol-wrapper .fa-search:before { content: "\f002"; }
+.afrisol-wrapper .fa-cart-plus:before { content: "\f217"; }
+.afrisol-wrapper .fa-shopping-cart:before { content: "\f07a"; }
+.afrisol-wrapper .fa-sign-in-alt:before { content: "\f2f6"; }
+.afrisol-wrapper .fa-arrow-left:before { content: "\f060"; }
+.afrisol-wrapper .fa-arrow-right:before { content: "\f061"; }
+.afrisol-wrapper .fa-check-circle:before { content: "\f058"; }
+.afrisol-wrapper .fa-times:before { content: "\f00d"; }
+.afrisol-wrapper .fa-bars:before { content: "\f0c9"; }
+.afrisol-wrapper .fa-home:before { content: "\f015"; }
+.afrisol-wrapper .fa-building:before { content: "\f1ad"; }
+.afrisol-wrapper .fa-tools:before { content: "\f7d9"; }
+.afrisol-wrapper .fa-wrench:before { content: "\f0ad"; }
+.afrisol-wrapper .fa-shield-alt:before { content: "\f3ed"; }
+.afrisol-wrapper .fa-comment-alt:before { content: "\f27a"; }
+.afrisol-wrapper .fa-paper-plane:before { content: "\f1d8"; }
+.afrisol-wrapper .fa-map-marker-alt:before { content: "\f3c5"; }
+.afrisol-wrapper .fa-tag:before { content: "\f02b"; }
+.afrisol-wrapper .fa-folder:before { content: "\f07b"; }
+.afrisol-wrapper .fa-box:before { content: "\f466"; }
+.afrisol-wrapper .fa-th-large:before { content: "\f009"; }
+.afrisol-wrapper .fa-list:before { content: "\f03a"; }
+.afrisol-wrapper .fa-exchange-alt:before { content: "\f362"; }
+.afrisol-wrapper .fa-box-open:before { content: "\f49e"; }
+.afrisol-wrapper .fa-solar-panel:before { content: "\f5ba"; }
+.afrisol-wrapper .fa-plus-circle:before { content: "\f055"; }
+.afrisol-wrapper .fa-camera:before { content: "\f030"; }
+.afrisol-wrapper .fa-cloud-upload-alt:before { content: "\f382"; }
+.afrisol-wrapper .fa-wallet:before { content: "\f555"; }
+.afrisol-wrapper .fa-sticky-note:before { content: "\f249"; }
+.afrisol-wrapper .fa-comments:before { content: "\f086"; }
+.afrisol-wrapper .fa-clock:before { content: "\f017"; }
+.afrisol-wrapper .fa-file-alt:before { content: "\f15c"; }
+.afrisol-wrapper .fa-certificate:before { content: "\f0a3"; }
+.afrisol-wrapper .fa-thumbs-up:before { content: "\f164"; }
+.afrisol-wrapper .fa-clipboard-list:before { content: "\f46d"; }
+.afrisol-wrapper .fa-hard-hat:before { content: "\f807"; }
+.afrisol-wrapper .fa-headset:before { content: "\f590"; }
+.afrisol-wrapper .fa-award:before { content: "\f559"; }
+.afrisol-wrapper .fa-leaf:before { content: "\f06c"; }
+.afrisol-wrapper .fa-truck:before { content: "\f0d1"; }
+.afrisol-wrapper .fa-info-circle:before { content: "\f05a"; }
+.afrisol-wrapper .fa-image:before { content: "\f03e"; }
+.afrisol-wrapper .fa-google:before { content: "\f1a0"; }
+.afrisol-wrapper .fa-whatsapp:before { content: "\f232"; }
+.afrisol-wrapper .fa-instagram:before { content: "\f16d"; }
+.afrisol-wrapper .fa-facebook-f:before { content: "\f39e"; }
+.afrisol-wrapper .fa-tiktok:before { content: "\e07b"; }
+.afrisol-wrapper .fa-chevron-up:before { content: "\f077"; }
+

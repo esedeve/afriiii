@@ -1,0 +1,708 @@
+/**
+ * Afrisol Responsive Stylesheet
+ */
+
+/* =========================================
+   Extra Large Screens (1400px+)
+   ========================================= */
+@media (min-width: 1400px) {
+    .afrisol-container {
+        max-width: 1400px;
+    }
+}
+
+/* =========================================
+   Large Screens (1200px - 1399px)
+   ========================================= */
+@media (max-width: 1399px) {
+    .afrisol-container {
+        max-width: 1200px;
+    }
+    
+    .afrisol-hero h1 {
+        font-size: 3rem;
+    }
+    
+    .afrisol-products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* =========================================
+   Medium-Large Screens (992px - 1199px)
+   ========================================= */
+@media (max-width: 1199px) {
+    .afrisol-container {
+        max-width: 960px;
+    }
+    
+    .afrisol-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .afrisol-hero-inner {
+        gap: 40px;
+    }
+    
+    .afrisol-hero-image-wrapper {
+        max-width: 400px;
+        height: 350px;
+    }
+    
+    .afrisol-footer-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    .afrisol-footer-brand {
+        grid-column: 1 / -1;
+        margin-bottom: var(--afrisol-spacing-lg);
+    }
+    
+    .afrisol-grid-4 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .afrisol-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .afrisol-products-sidebar {
+        width: 250px;
+    }
+    
+    .afrisol-dashboard-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .afrisol-team-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .afrisol-impact-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =========================================
+   Medium Screens (Tablets: 768px - 991px)
+   ========================================= */
+@media (max-width: 991px) {
+    .afrisol-container {
+        max-width: 720px;
+        padding: 0 var(--afrisol-spacing-lg);
+    }
+    
+    /* Header */
+    .afrisol-nav {
+        display: none;
+    }
+    
+    .afrisol-mobile-toggle {
+        display: block;
+    }
+    
+    .afrisol-mobile-nav {
+        display: block;
+    }
+    
+    /* Hero */
+    .afrisol-hero {
+        min-height: auto;
+        padding: 120px 0 60px;
+    }
+    
+    .afrisol-hero-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .afrisol-hero-content {
+        max-width: 100%;
+    }
+    
+    .afrisol-hero h1 {
+        font-size: 2.25rem;
+    }
+    
+    .afrisol-hero-buttons {
+        justify-content: center;
+    }
+    
+    .afrisol-hero-image-wrapper {
+        max-width: 100%;
+        height: 300px;
+    }
+    
+    /* Services Grid */
+    .afrisol-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Why Choose */
+    .afrisol-why-choose {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .afrisol-why-image-wrapper {
+        height: 350px;
+    }
+    
+    /* Map */
+    .afrisol-map-section {
+        flex-direction: column;
+    }
+    
+    .afrisol-map-wrapper {
+        height: 300px;
+    }
+    
+    /* Products */
+    .afrisol-products-layout {
+        flex-direction: column;
+    }
+    
+    .afrisol-products-sidebar {
+        width: 100%;
+        display: flex;
+        gap: var(--afrisol-spacing-md);
+        overflow-x: auto;
+        padding-bottom: var(--afrisol-spacing-md);
+    }
+    
+    .afrisol-filter-card {
+        min-width: 250px;
+        flex-shrink: 0;
+        margin-bottom: 0;
+    }
+    
+    .afrisol-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Single Product */
+    .afrisol-single-product {
+        flex-direction: column;
+    }
+    
+    .afrisol-gallery-main {
+        height: 350px;
+    }
+    
+    /* Services Categories */
+    .afrisol-services-categories {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Calculator */
+    .afrisol-calculator-wrapper {
+        flex-direction: column;
+    }
+    
+    /* Quote Steps */
+    .afrisol-quote-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Portal */
+    .afrisol-portal-layout {
+        flex-direction: column;
+    }
+    
+    .afrisol-portal-sidebar {
+        width: 100%;
+    }
+    
+    .afrisol-portal-menu {
+        display: flex;
+        overflow-x: auto;
+    }
+    
+    .afrisol-portal-menu a {
+        flex-shrink: 0;
+        border-bottom: none;
+        border-right: 1px solid var(--afrisol-glass-border);
+    }
+    
+    /* Cart */
+    .afrisol-cart-layout {
+        flex-direction: column;
+    }
+    
+    .afrisol-cart-summary {
+        width: 100%;
+    }
+    
+    .afrisol-cart-summary-card {
+        position: static;
+    }
+    
+    /* Blog */
+    .afrisol-blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* About */
+    .afrisol-about-content {
+        flex-direction: column;
+    }
+    
+    .afrisol-about-content.reverse {
+        flex-direction: column;
+    }
+    
+    .afrisol-team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Contact */
+    .afrisol-contact-layout {
+        flex-direction: column;
+    }
+    
+    /* Footer */
+    .afrisol-footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    /* Section Headers */
+    .afrisol-section-header h2 {
+        font-size: 2rem;
+    }
+    
+    /* Admin Grid */
+    .afrisol-admin-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =========================================
+   Small Screens (Mobile: 576px - 767px)
+   ========================================= */
+@media (max-width: 767px) {
+    .afrisol-container {
+        padding: 0 var(--afrisol-spacing-md);
+    }
+    
+    .afrisol-section {
+        padding: var(--afrisol-spacing-2xl) 0;
+    }
+    
+    .afrisol-section-lg {
+        padding: 60px 0;
+    }
+    
+    /* Typography */
+    .afrisol-wrapper h1 { font-size: 2rem; }
+    .afrisol-wrapper h2 { font-size: 1.75rem; }
+    .afrisol-wrapper h3 { font-size: 1.5rem; }
+    
+    /* Header */
+    .afrisol-header {
+        padding: 12px 0;
+    }
+    
+    .afrisol-logo-icon {
+        width: 38px;
+        height: 38px;
+    }
+    
+    .afrisol-logo-text {
+        font-size: 1.25rem;
+    }
+    
+    .afrisol-header-actions .afrisol-btn {
+        display: none;
+    }
+    
+    /* Hero */
+    .afrisol-hero {
+        padding: 100px 0 40px;
+    }
+    
+    .afrisol-hero h1 {
+        font-size: 1.75rem;
+    }
+    
+    .afrisol-hero p {
+        font-size: 1rem;
+    }
+    
+    .afrisol-hero-buttons {
+        flex-direction: column;
+    }
+    
+    .afrisol-hero-buttons .afrisol-btn {
+        width: 100%;
+    }
+    
+    .afrisol-hero-image-wrapper {
+        height: 250px;
+    }
+    
+    /* Grids */
+    .afrisol-grid-2,
+    .afrisol-grid-3,
+    .afrisol-grid-4 {
+        grid-template-columns: 1fr;
+    }
+    
+    .afrisol-col-4,
+    .afrisol-col-6,
+    .afrisol-col-8 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    .afrisol-row {
+        flex-direction: column;
+    }
+    
+    /* Services */
+    .afrisol-service-card {
+        padding: 30px 20px;
+    }
+    
+    .afrisol-service-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+    
+    /* Why Choose */
+    .afrisol-why-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .afrisol-why-image-wrapper {
+        height: 280px;
+    }
+    
+    /* Products */
+    .afrisol-products-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .afrisol-products-controls {
+        justify-content: space-between;
+    }
+    
+    .afrisol-products-sidebar {
+        flex-direction: column;
+    }
+    
+    .afrisol-filter-card {
+        min-width: 100%;
+    }
+    
+    .afrisol-products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .afrisol-products-grid.list-view .afrisol-product-card {
+        flex-direction: column;
+    }
+    
+    .afrisol-products-grid.list-view .afrisol-product-image {
+        width: 100%;
+        height: 200px;
+    }
+    
+    /* Product Details */
+    .afrisol-gallery-main {
+        height: 280px;
+    }
+    
+    .afrisol-gallery-thumb {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .afrisol-product-price-large {
+        font-size: 2rem;
+    }
+    
+    .afrisol-product-actions-large {
+        flex-direction: column;
+    }
+    
+    /* Quote */
+    .afrisol-quote-steps {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .afrisol-step {
+        justify-content: center;
+    }
+    
+    .afrisol-step-line {
+        width: 2px;
+        height: 20px;
+        margin: var(--afrisol-spacing-sm) 0;
+    }
+    
+    .afrisol-quote-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .afrisol-quote-buttons {
+        flex-direction: column;
+        gap: var(--afrisol-spacing-md);
+    }
+    
+    /* Portal */
+    .afrisol-dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .afrisol-stat-card {
+        padding: var(--afrisol-spacing-md);
+    }
+    
+    .afrisol-stat-content h3 {
+        font-size: 1.25rem;
+    }
+    
+    /* Cart */
+    .afrisol-cart-item {
+        flex-direction: column;
+    }
+    
+    .afrisol-cart-item-image {
+        width: 100%;
+        height: 150px;
+    }
+    
+    .afrisol-cart-item-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    /* Blog */
+    .afrisol-blog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* About */
+    .afrisol-about-image-wrapper {
+        height: 280px;
+    }
+    
+    .afrisol-team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .afrisol-impact-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .afrisol-impact-number {
+        font-size: 2.5rem;
+    }
+    
+    /* Testimonials */
+    .afrisol-testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Forms */
+    .afrisol-form {
+        padding: var(--afrisol-spacing-lg);
+    }
+    
+    .afrisol-form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    /* Footer */
+    .afrisol-footer {
+        padding: 50px 0 20px;
+    }
+    
+    .afrisol-footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    /* Scroll to top & WhatsApp */
+    .afrisol-scroll-top {
+        bottom: 20px;
+        left: 20px;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .afrisol-whatsapp-widget {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+        font-size: 1.5rem;
+    }
+    
+    /* PWA Prompt */
+    .afrisol-pwa-prompt.show {
+        bottom: 85px;
+    }
+    
+    /* Modals */
+    .afrisol-modal-content {
+        margin: 10px;
+        max-height: calc(100vh - 40px);
+    }
+    
+    /* Admin */
+    .afrisol-admin-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Tabs */
+    .afrisol-tabs-nav {
+        gap: 0;
+    }
+    
+    .afrisol-tab-btn {
+        padding: var(--afrisol-spacing-sm) var(--afrisol-spacing-md);
+        font-size: 0.8125rem;
+    }
+    
+    /* Buttons */
+    .afrisol-btn {
+        padding: 10px 20px;
+    }
+    
+    .afrisol-btn-lg {
+        padding: 14px 28px;
+    }
+}
+
+/* =========================================
+   Extra Small Screens (< 576px)
+   ========================================= */
+@media (max-width: 575px) {
+    .afrisol-wrapper h1 { font-size: 1.75rem; }
+    .afrisol-wrapper h2 { font-size: 1.5rem; }
+    
+    .afrisol-section-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .afrisol-section-header {
+        margin-bottom: var(--afrisol-spacing-xl);
+    }
+    
+    .afrisol-hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    .afrisol-hero-image-wrapper {
+        height: 200px;
+    }
+    
+    .afrisol-product-card {
+        border-radius: var(--afrisol-radius-md);
+    }
+    
+    .afrisol-product-info {
+        padding: 15px;
+    }
+    
+    .afrisol-product-title {
+        font-size: 0.9375rem;
+    }
+    
+    .afrisol-product-price {
+        font-size: 1.1rem;
+    }
+    
+    .afrisol-product-buttons {
+        flex-direction: column;
+    }
+    
+    .afrisol-gallery-main {
+        height: 220px;
+    }
+    
+    .afrisol-card {
+        padding: var(--afrisol-spacing-lg);
+    }
+    
+    .afrisol-testimonial-card {
+        padding: 20px;
+    }
+}
+
+/* =========================================
+   Print Styles
+   ========================================= */
+@media print {
+    .afrisol-header,
+    .afrisol-footer,
+    .afrisol-scroll-top,
+    .afrisol-whatsapp-widget,
+    .afrisol-pwa-prompt,
+    .afrisol-mobile-nav,
+    .afrisol-overlay {
+        display: none !important;
+    }
+    
+    .afrisol-wrapper {
+        background: white;
+        color: black;
+    }
+    
+    .afrisol-card {
+        background: white;
+        border: 1px solid #ddd;
+        box-shadow: none;
+    }
+    
+    a {
+        color: black !important;
+        text-decoration: underline;
+    }
+}
+
+/* =========================================
+   Reduced Motion
+   ========================================= */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* =========================================
+   High Contrast Mode
+   ========================================= */
+@media (prefers-contrast: high) {
+    .afrisol-wrapper {
+        --afrisol-glass-bg: rgba(0, 0, 0, 0.9);
+        --afrisol-glass-border: rgba(255, 255, 255, 0.5);
+    }
+    
+    .afrisol-btn-primary {
+        background: var(--afrisol-primary);
+    }
+    
+    .afrisol-card,
+    .afrisol-form,
+    .afrisol-header,
+    .afrisol-footer {
+        border-width: 2px;
+    }
+}
+
+/* =========================================
+   Dark Mode Support (for light theme users)
+   ========================================= */
+@media (prefers-color-scheme: light) {
+    /* Afrisol is dark by default, so no changes needed */
+}

@@ -1,0 +1,1907 @@
+/**
+ * Afrisol Components Stylesheet
+ */
+
+/* =========================================
+   Buttons
+   ========================================= */
+.afrisol-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--afrisol-spacing-sm);
+    padding: 12px 24px;
+    font-family: var(--afrisol-font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    border-radius: var(--afrisol-radius-md);
+    cursor: pointer;
+    transition: all var(--afrisol-transition-normal);
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.afrisol-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.afrisol-btn:hover::before {
+    left: 100%;
+}
+
+.afrisol-btn-primary {
+    background: linear-gradient(135deg, var(--afrisol-primary), var(--afrisol-primary-light));
+    color: var(--afrisol-secondary) !important;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    font-weight: 700;
+}
+
+.afrisol-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+    background: var(--afrisol-secondary);
+    color: var(--afrisol-primary) !important;
+    border: 2px solid var(--afrisol-primary);
+}
+
+.afrisol-btn-secondary {
+    background: var(--afrisol-glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--afrisol-glass-border);
+    color: var(--afrisol-text-light);
+}
+
+.afrisol-btn-secondary:hover {
+    background: var(--afrisol-primary);
+    border-color: var(--afrisol-primary);
+    color: white;
+}
+
+.afrisol-btn-outline {
+    background: transparent;
+    border: 2px solid var(--afrisol-primary);
+    color: var(--afrisol-primary);
+}
+
+.afrisol-btn-outline:hover {
+    background: var(--afrisol-primary);
+    color: var(--afrisol-secondary) !important;
+}
+
+.afrisol-btn-ghost {
+    background: transparent;
+    color: var(--afrisol-text-light);
+    padding: 8px 16px;
+}
+
+.afrisol-btn-ghost:hover {
+    color: var(--afrisol-primary);
+    background: var(--afrisol-glass-bg);
+}
+
+.afrisol-btn-sm {
+    padding: 8px 16px;
+    font-size: 0.75rem;
+}
+
+.afrisol-btn-lg {
+    padding: 16px 32px;
+    font-size: 1rem;
+}
+
+.afrisol-btn-block {
+    width: 100%;
+}
+
+.afrisol-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.afrisol-btn-icon {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: var(--afrisol-radius-full);
+}
+
+/* =========================================
+   Header
+   ========================================= */
+.afrisol-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--afrisol-glass-border);
+    padding: 15px 0;
+    z-index: var(--afrisol-z-sticky);
+    transition: all var(--afrisol-transition-normal);
+}
+
+.afrisol-header.scrolled {
+    padding: 10px 0;
+    box-shadow: var(--afrisol-shadow-lg);
+}
+
+.afrisol-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.afrisol-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.afrisol-logo-icon {
+    width: 45px;
+    height: 45px;
+    background: transparent;
+    border-radius: var(--afrisol-radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.afrisol-logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.afrisol-logo-text {
+    font-family: var(--afrisol-font-heading);
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--afrisol-primary);
+    letter-spacing: 1px;
+}
+
+.afrisol-nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.afrisol-nav a {
+    color: var(--afrisol-text-light);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: color var(--afrisol-transition-fast);
+    position: relative;
+}
+
+.afrisol-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--afrisol-primary);
+    transition: width var(--afrisol-transition-normal);
+}
+
+.afrisol-nav a:hover,
+.afrisol-nav a.active {
+    color: var(--afrisol-primary);
+}
+
+.afrisol-nav a:hover::after,
+.afrisol-nav a.active::after {
+    width: 100%;
+}
+
+.afrisol-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.afrisol-cart-icon {
+    position: relative;
+    color: var(--afrisol-text-light);
+    font-size: 1.25rem;
+    transition: color var(--afrisol-transition-fast);
+}
+
+.afrisol-cart-icon:hover {
+    color: var(--afrisol-primary);
+}
+
+.afrisol-cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--afrisol-primary);
+    color: white;
+    font-size: 0.625rem;
+    font-weight: 700;
+    width: 18px;
+    height: 18px;
+    border-radius: var(--afrisol-radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.afrisol-mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--afrisol-text-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* =========================================
+   Mobile Navigation
+   ========================================= */
+.afrisol-mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background: var(--afrisol-secondary);
+    backdrop-filter: blur(20px);
+    border-left: 1px solid var(--afrisol-glass-border);
+    padding: 80px 30px 30px;
+    z-index: var(--afrisol-z-fixed);
+    transition: right var(--afrisol-transition-normal);
+    overflow-y: auto;
+}
+
+.afrisol-mobile-nav.active {
+    right: 0;
+}
+
+.afrisol-mobile-nav a {
+    display: block;
+    color: var(--afrisol-text-light);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--afrisol-glass-border);
+    transition: all var(--afrisol-transition-fast);
+}
+
+.afrisol-mobile-nav a:hover {
+    color: var(--afrisol-primary);
+    padding-left: 10px;
+}
+
+.afrisol-mobile-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--afrisol-text-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.afrisol-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: calc(var(--afrisol-z-fixed) - 1);
+}
+
+.afrisol-overlay.active {
+    display: block;
+}
+
+/* =========================================
+   Footer
+   ========================================= */
+.afrisol-footer {
+    background: rgba(10, 10, 20, 0.8);
+    border-top: 1px solid var(--afrisol-glass-border);
+    padding: 80px 0 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.afrisol-footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.afrisol-footer-brand p {
+    color: var(--afrisol-text-muted);
+    margin-top: 15px;
+    line-height: 1.7;
+    max-width: 300px;
+}
+
+.afrisol-footer h4 {
+    color: var(--afrisol-primary);
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.afrisol-footer-links a {
+    display: block;
+    color: var(--afrisol-text-muted);
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 0.875rem;
+    transition: all var(--afrisol-transition-fast);
+}
+
+.afrisol-footer-links a:hover {
+    color: var(--afrisol-primary);
+    padding-left: 5px;
+}
+
+.afrisol-footer-contact p {
+    color: var(--afrisol-text-muted);
+    font-size: 0.875rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.afrisol-footer-contact i {
+    color: var(--afrisol-primary);
+    width: 16px;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.afrisol-footer-contact svg {
+    color: var(--afrisol-primary);
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.afrisol-footer-contact a {
+    color: var(--afrisol-text-muted);
+    text-decoration: none;
+    transition: color var(--afrisol-transition-fast);
+}
+
+.afrisol-footer-contact a:hover {
+    color: var(--afrisol-primary);
+}
+
+.afrisol-social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.afrisol-social-links a {
+    width: 40px;
+    height: 40px;
+    background: var(--afrisol-glass-bg);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--afrisol-text-light);
+    text-decoration: none;
+    transition: all var(--afrisol-transition-normal);
+}
+
+.afrisol-social-links a svg {
+    fill: currentColor;
+}
+
+.afrisol-social-links a:hover {
+    background: var(--afrisol-primary);
+    border-color: var(--afrisol-primary);
+    transform: translateY(-3px);
+}
+
+.afrisol-footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid var(--afrisol-glass-border);
+    color: var(--afrisol-text-muted);
+    font-size: 0.8125rem;
+}
+
+/* =========================================
+   Hero Section
+   ========================================= */
+.afrisol-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.afrisol-hero-inner {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.afrisol-hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.afrisol-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--afrisol-glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--afrisol-glass-border);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    margin-bottom: 25px;
+    color: var(--afrisol-text-light);
+}
+
+.afrisol-hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--afrisol-primary);
+    word-spacing: 0.1em;
+}
+
+/* Hero Heading Letter Animation */
+.afrisol-hero-animated-heading {
+    display: block;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.afrisol-hero-animated-heading .letter {
+    display: inline-block;
+    animation: letterColorPulse 3s ease-in-out infinite;
+    color: var(--afrisol-primary);
+}
+
+.afrisol-hero-animated-heading .letter:nth-child(1) { animation-delay: 0s; }
+.afrisol-hero-animated-heading .letter:nth-child(2) { animation-delay: 0.05s; }
+.afrisol-hero-animated-heading .letter:nth-child(3) { animation-delay: 0.1s; }
+.afrisol-hero-animated-heading .letter:nth-child(4) { animation-delay: 0.15s; }
+.afrisol-hero-animated-heading .letter:nth-child(5) { animation-delay: 0.2s; }
+.afrisol-hero-animated-heading .letter:nth-child(6) { animation-delay: 0.25s; }
+.afrisol-hero-animated-heading .letter:nth-child(7) { animation-delay: 0.3s; }
+.afrisol-hero-animated-heading .letter:nth-child(8) { animation-delay: 0.35s; }
+.afrisol-hero-animated-heading .letter:nth-child(9) { animation-delay: 0.4s; }
+.afrisol-hero-animated-heading .letter:nth-child(10) { animation-delay: 0.45s; }
+.afrisol-hero-animated-heading .letter:nth-child(11) { animation-delay: 0.5s; }
+.afrisol-hero-animated-heading .letter:nth-child(12) { animation-delay: 0.55s; }
+.afrisol-hero-animated-heading .letter:nth-child(13) { animation-delay: 0.6s; }
+.afrisol-hero-animated-heading .letter:nth-child(14) { animation-delay: 0.65s; }
+.afrisol-hero-animated-heading .letter:nth-child(15) { animation-delay: 0.7s; }
+.afrisol-hero-animated-heading .letter:nth-child(16) { animation-delay: 0.75s; }
+.afrisol-hero-animated-heading .letter:nth-child(17) { animation-delay: 0.8s; }
+.afrisol-hero-animated-heading .letter:nth-child(18) { animation-delay: 0.85s; }
+.afrisol-hero-animated-heading .letter:nth-child(19) { animation-delay: 0.9s; }
+.afrisol-hero-animated-heading .letter:nth-child(20) { animation-delay: 0.95s; }
+.afrisol-hero-animated-heading .letter:nth-child(n+21) { animation-delay: 1s; }
+
+@keyframes letterColorPulse {
+    0%, 100% { 
+        color: var(--afrisol-primary);
+        text-shadow: none;
+    }
+    50% { 
+        color: var(--afrisol-primary-light);
+        text-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+    }
+}
+
+.afrisol-hero p {
+    font-size: 1.125rem;
+    color: var(--afrisol-text-muted);
+    margin-bottom: 35px;
+    line-height: 1.8;
+}
+
+.afrisol-hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.afrisol-hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.afrisol-hero-image-wrapper {
+    width: 100%;
+    max-width: 500px;
+    height: 400px;
+    background: var(--afrisol-glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.afrisol-hero-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--afrisol-radius-xl);
+}
+
+.afrisol-hero-image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 107, 53, 0.1), transparent);
+    animation: hero-shimmer 3s infinite;
+}
+
+@keyframes hero-shimmer {
+    0% { transform: translateX(-100%) translateY(-100%); }
+    100% { transform: translateX(100%) translateY(100%); }
+}
+
+/* =========================================
+   Service Cards
+   ========================================= */
+.afrisol-service-card {
+    background: var(--afrisol-glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-xl);
+    padding: 40px 30px;
+    text-align: center;
+    transition: all var(--afrisol-transition-normal);
+}
+
+.afrisol-service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(255, 107, 53, 0.15);
+}
+
+.afrisol-service-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--afrisol-primary), var(--afrisol-primary-light));
+    border-radius: var(--afrisol-radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 28px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+}
+
+.afrisol-service-icon svg {
+    width: 28px;
+    height: 28px;
+    fill: white;
+}
+
+.afrisol-service-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    color: var(--afrisol-text-light);
+}
+
+.afrisol-service-card p {
+    color: var(--afrisol-text-muted);
+    font-size: 0.875rem;
+    line-height: 1.7;
+}
+
+/* =========================================
+   Product Cards
+   ========================================= */
+.afrisol-product-card {
+    background: var(--afrisol-glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-lg);
+    overflow: hidden;
+    transition: all var(--afrisol-transition-normal);
+    position: relative;
+}
+
+.afrisol-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.afrisol-product-image {
+    position: relative;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+}
+
+.afrisol-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--afrisol-transition-normal);
+}
+
+.afrisol-product-card:hover .afrisol-product-image img {
+    transform: scale(1.05);
+}
+
+.afrisol-product-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+}
+
+.afrisol-product-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all var(--afrisol-transition-normal);
+}
+
+.afrisol-product-card:hover .afrisol-product-actions {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.afrisol-product-action-btn {
+    width: 36px;
+    height: 36px;
+    background: var(--afrisol-glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--afrisol-text-light);
+    cursor: pointer;
+    transition: all var(--afrisol-transition-fast);
+}
+
+.afrisol-product-action-btn:hover {
+    background: var(--afrisol-primary);
+    border-color: var(--afrisol-primary);
+    color: white;
+}
+
+.afrisol-product-info {
+    padding: 20px;
+}
+
+.afrisol-product-category {
+    font-size: 0.75rem;
+    color: var(--afrisol-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.afrisol-product-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--afrisol-text-light);
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.afrisol-product-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.afrisol-product-title a:hover {
+    color: var(--afrisol-primary);
+}
+
+.afrisol-product-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.afrisol-product-rating .count {
+    font-size: 0.75rem;
+    color: var(--afrisol-text-muted);
+}
+
+.afrisol-product-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--afrisol-primary);
+    margin-bottom: 15px;
+}
+
+.afrisol-product-price .old-price {
+    font-size: 0.875rem;
+    color: var(--afrisol-text-muted);
+    text-decoration: line-through;
+    margin-left: 8px;
+    font-weight: 400;
+}
+
+.afrisol-product-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.afrisol-product-buttons .afrisol-btn {
+    flex: 1;
+    padding: 10px;
+    font-size: 0.75rem;
+}
+
+.afrisol-stock-badge {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+}
+
+.afrisol-stock-badge.in-stock {
+    background: var(--afrisol-success);
+}
+
+.afrisol-stock-badge.out-of-stock {
+    background: var(--afrisol-error);
+}
+
+.afrisol-stock-badge.low-stock {
+    background: var(--afrisol-warning);
+    color: var(--afrisol-text-dark);
+}
+
+/* =========================================
+   Testimonial Cards
+   ========================================= */
+.afrisol-testimonial-card {
+    background: var(--afrisol-glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-xl);
+    padding: 30px;
+}
+
+.afrisol-testimonial-stars {
+    margin-bottom: 15px;
+}
+
+.afrisol-testimonial-text {
+    color: var(--afrisol-text-muted);
+    font-style: italic;
+    margin-bottom: 20px;
+    line-height: 1.7;
+    font-size: 0.9375rem;
+}
+
+.afrisol-testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.afrisol-testimonial-avatar {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--afrisol-primary), var(--afrisol-primary-light));
+    border-radius: var(--afrisol-radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1.125rem;
+    overflow: hidden;
+}
+
+.afrisol-testimonial-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.afrisol-testimonial-name {
+    font-weight: 600;
+    color: var(--afrisol-text-light);
+    margin-bottom: 2px;
+}
+
+.afrisol-testimonial-location {
+    font-size: 0.8125rem;
+    color: var(--afrisol-text-muted);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.afrisol-testimonial-location i {
+    color: var(--afrisol-primary);
+    font-size: 0.75rem;
+}
+
+/* =========================================
+   Forms
+   ========================================= */
+.afrisol-form {
+    background: var(--afrisol-glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-xl);
+    padding: var(--afrisol-spacing-2xl);
+}
+
+.afrisol-form-row {
+    display: flex;
+    gap: var(--afrisol-spacing-lg);
+    margin-bottom: var(--afrisol-spacing-lg);
+}
+
+.afrisol-form-group {
+    flex: 1;
+    margin-bottom: var(--afrisol-spacing-lg);
+}
+
+.afrisol-form-group:last-child {
+    margin-bottom: 0;
+}
+
+.afrisol-form-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    color: var(--afrisol-text-light);
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.afrisol-form-group label i {
+    color: var(--afrisol-primary);
+    width: 16px;
+}
+
+.afrisol-form-group .required {
+    color: var(--afrisol-error);
+}
+
+.afrisol-form-group input,
+.afrisol-form-group select,
+.afrisol-form-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-md);
+    color: var(--afrisol-text-light);
+    font-family: var(--afrisol-font-body);
+    font-size: 0.9375rem;
+    transition: all var(--afrisol-transition-fast);
+}
+
+.afrisol-form-group input:focus,
+.afrisol-form-group select:focus,
+.afrisol-form-group textarea:focus {
+    outline: none;
+    border-color: var(--afrisol-primary);
+    background: rgba(255, 107, 53, 0.05);
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+.afrisol-form-group input::placeholder,
+.afrisol-form-group textarea::placeholder {
+    color: #e0e0e0 !important;
+    opacity: 1 !important;
+}
+
+.afrisol-form-group input::-webkit-input-placeholder,
+.afrisol-form-group textarea::-webkit-input-placeholder {
+    color: #e0e0e0 !important;
+    opacity: 1 !important;
+}
+
+.afrisol-form-group input::-moz-placeholder,
+.afrisol-form-group textarea::-moz-placeholder {
+    color: #e0e0e0 !important;
+    opacity: 1 !important;
+}
+
+.afrisol-form-group input:-ms-input-placeholder,
+.afrisol-form-group textarea:-ms-input-placeholder {
+    color: #e0e0e0 !important;
+    opacity: 1 !important;
+}
+
+/* Global placeholder styles for all Afrisol forms */
+.afrisol-wrapper input::placeholder,
+.afrisol-wrapper textarea::placeholder,
+.afrisol-wrapper select::placeholder {
+    color: #e0e0e0 !important;
+    opacity: 1 !important;
+}
+
+.afrisol-wrapper input::-webkit-input-placeholder,
+.afrisol-wrapper textarea::-webkit-input-placeholder {
+    color: #e0e0e0 !important;
+    opacity: 1 !important;
+}
+
+.afrisol-wrapper input::-moz-placeholder,
+.afrisol-wrapper textarea::-moz-placeholder {
+    color: #e0e0e0 !important;
+    opacity: 1 !important;
+}
+
+.afrisol-wrapper input:-ms-input-placeholder,
+.afrisol-wrapper textarea:-ms-input-placeholder {
+    color: #e0e0e0 !important;
+    opacity: 1 !important;
+}
+
+.afrisol-form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.afrisol-form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-color: rgba(26, 26, 46, 0.95) !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ff6b35' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 40px;
+}
+
+/* Dropdown/Select Options Styling */
+.afrisol-form-group select option {
+    background-color: #1a1a2e !important;
+    color: #ff6b35 !important;
+    padding: 12px 16px;
+}
+
+.afrisol-form-group select option:hover,
+.afrisol-form-group select option:focus,
+.afrisol-form-group select option:checked {
+    background-color: #ff6b35 !important;
+    color: #1a1a2e !important;
+}
+
+/* Global select/dropdown styling */
+.afrisol-wrapper select,
+select.afrisol-select {
+    background-color: rgba(26, 26, 46, 0.95) !important;
+}
+
+.afrisol-wrapper select option,
+select.afrisol-select option {
+    background-color: #1a1a2e !important;
+    color: #ff6b35 !important;
+    padding: 10px;
+}
+
+.afrisol-form-hint {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.75rem;
+    color: var(--afrisol-text-muted);
+}
+
+.afrisol-form-error {
+    color: var(--afrisol-error);
+}
+
+/* Password Field */
+.afrisol-password-field {
+    position: relative;
+}
+
+.afrisol-password-field input {
+    padding-right: 50px;
+}
+
+.afrisol-password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--afrisol-text-muted);
+    cursor: pointer;
+    padding: 5px;
+    transition: color var(--afrisol-transition-fast);
+}
+
+.afrisol-password-toggle:hover {
+    color: var(--afrisol-primary);
+}
+
+/* Checkbox */
+.afrisol-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    color: var(--afrisol-text-muted);
+}
+
+.afrisol-checkbox input {
+    display: none;
+}
+
+.afrisol-checkbox-mark {
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--afrisol-transition-fast);
+    flex-shrink: 0;
+}
+
+.afrisol-checkbox input:checked + .afrisol-checkbox-mark {
+    background: var(--afrisol-primary);
+    border-color: var(--afrisol-primary);
+}
+
+.afrisol-checkbox input:checked + .afrisol-checkbox-mark::after {
+    content: '✓';
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.afrisol-form-options {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--afrisol-spacing-lg);
+}
+
+.afrisol-form-footer {
+    text-align: center;
+    margin-top: var(--afrisol-spacing-lg);
+    color: var(--afrisol-text-muted);
+    font-size: 0.875rem;
+}
+
+/* =========================================
+   Scroll to Top
+   ========================================= */
+.afrisol-scroll-top {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--afrisol-glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: var(--afrisol-radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: var(--afrisol-z-fixed);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all var(--afrisol-transition-normal);
+}
+
+.afrisol-scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.afrisol-scroll-top i {
+    color: var(--afrisol-primary);
+    font-size: 1rem;
+    z-index: 1;
+}
+
+.afrisol-scroll-top .afrisol-scroll-arrow {
+    color: var(--afrisol-primary);
+    z-index: 1;
+}
+
+.afrisol-scroll-progress {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.afrisol-scroll-progress-bg {
+    fill: none;
+    stroke: var(--afrisol-glass-border);
+    stroke-width: 4;
+}
+
+.afrisol-scroll-progress-bar {
+    fill: none;
+    stroke: var(--afrisol-primary);
+    stroke-width: 4;
+    stroke-dasharray: 289;
+    stroke-dashoffset: 289;
+    stroke-linecap: round;
+    transition: stroke-dashoffset var(--afrisol-transition-fast);
+}
+
+/* =========================================
+   WhatsApp Widget
+   ========================================= */
+.afrisol-whatsapp-widget {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: var(--afrisol-radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.75rem;
+    z-index: var(--afrisol-z-fixed);
+    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+    transition: all var(--afrisol-transition-normal);
+    text-decoration: none;
+}
+
+.afrisol-whatsapp-widget:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+    color: white;
+}
+
+.afrisol-whatsapp-widget::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--afrisol-radius-full);
+    background: #25D366;
+    animation: whatsapp-pulse 2s infinite;
+    z-index: -1;
+}
+
+@keyframes whatsapp-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* =========================================
+   PWA Install Prompt
+   ========================================= */
+.afrisol-pwa-prompt {
+    position: fixed;
+    bottom: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 420px;
+    background: var(--afrisol-glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-xl);
+    padding: var(--afrisol-spacing-lg);
+    z-index: var(--afrisol-z-modal);
+    transition: bottom var(--afrisol-transition-normal);
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.afrisol-pwa-prompt.show {
+    bottom: 100px;
+}
+
+.afrisol-pwa-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    color: var(--afrisol-text-muted);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 4px;
+    transition: color var(--afrisol-transition-fast);
+}
+
+.afrisol-pwa-close:hover {
+    color: var(--afrisol-primary);
+}
+
+.afrisol-pwa-prompt-content {
+    display: flex;
+    align-items: center;
+    gap: var(--afrisol-spacing-md);
+}
+
+.afrisol-pwa-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--afrisol-primary), var(--afrisol-primary-light));
+    border-radius: var(--afrisol-radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+.afrisol-pwa-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    object-fit: contain;
+}
+
+.afrisol-pwa-text h4 {
+    font-size: 1.1rem;
+    color: var(--afrisol-text-light);
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+.afrisol-pwa-text p {
+    font-size: 0.8125rem;
+    color: var(--afrisol-text-muted);
+    margin: 0;
+}
+
+/* Browser-specific instructions */
+.afrisol-pwa-instructions {
+    margin-top: var(--afrisol-spacing-md);
+    padding: var(--afrisol-spacing-sm) var(--afrisol-spacing-md);
+    background: rgba(255, 107, 53, 0.1);
+    border-radius: var(--afrisol-radius-md);
+    border-left: 3px solid var(--afrisol-primary);
+}
+
+.afrisol-pwa-browser p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--afrisol-text-light);
+    line-height: 1.5;
+}
+
+.afrisol-pwa-browser i {
+    color: var(--afrisol-primary);
+    margin-right: 4px;
+}
+
+.afrisol-pwa-browser strong {
+    color: var(--afrisol-primary);
+}
+
+.afrisol-pwa-buttons {
+    display: flex;
+    gap: var(--afrisol-spacing-sm);
+    margin-top: var(--afrisol-spacing-md);
+}
+
+.afrisol-pwa-buttons .afrisol-btn {
+    flex: 1;
+    padding: 12px;
+    font-size: 0.875rem;
+}
+
+/* =========================================
+   Modal
+   ========================================= */
+.afrisol-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: var(--afrisol-z-modal);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.afrisol-modal.active {
+    display: flex;
+}
+
+.afrisol-modal-content {
+    background: var(--afrisol-secondary);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-xl);
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.afrisol-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--afrisol-spacing-lg);
+    border-bottom: 1px solid var(--afrisol-glass-border);
+}
+
+.afrisol-modal-header h3 {
+    margin: 0;
+    color: var(--afrisol-text-light);
+}
+
+.afrisol-modal-close {
+    background: none;
+    border: none;
+    color: var(--afrisol-text-muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.afrisol-modal-close:hover {
+    color: var(--afrisol-primary);
+}
+
+.afrisol-modal-body {
+    padding: var(--afrisol-spacing-lg);
+}
+
+.afrisol-modal-footer {
+    padding: var(--afrisol-spacing-lg);
+    border-top: 1px solid var(--afrisol-glass-border);
+    display: flex;
+    gap: var(--afrisol-spacing-md);
+    justify-content: flex-end;
+}
+
+/* =========================================
+   Tabs
+   ========================================= */
+.afrisol-tabs {
+    border-bottom: 1px solid var(--afrisol-glass-border);
+    margin-bottom: var(--afrisol-spacing-xl);
+}
+
+.afrisol-tabs-nav {
+    display: flex;
+    gap: var(--afrisol-spacing-md);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.afrisol-tab-btn {
+    background: none;
+    border: none;
+    padding: var(--afrisol-spacing-md) var(--afrisol-spacing-lg);
+    color: var(--afrisol-text-muted);
+    font-family: var(--afrisol-font-body);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+    transition: color var(--afrisol-transition-fast);
+}
+
+.afrisol-tab-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--afrisol-primary);
+    transform: scaleX(0);
+    transition: transform var(--afrisol-transition-fast);
+}
+
+.afrisol-tab-btn:hover,
+.afrisol-tab-btn.active {
+    color: var(--afrisol-primary);
+}
+
+.afrisol-tab-btn.active::after {
+    transform: scaleX(1);
+}
+
+.afrisol-tab-panel {
+    display: none;
+}
+
+.afrisol-tab-panel.active {
+    display: block;
+}
+
+/* =========================================
+   Accordion
+   ========================================= */
+.afrisol-accordion {
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-lg);
+    overflow: hidden;
+}
+
+.afrisol-accordion-item {
+    border-bottom: 1px solid var(--afrisol-glass-border);
+}
+
+.afrisol-accordion-item:last-child {
+    border-bottom: none;
+}
+
+.afrisol-accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--afrisol-spacing-lg);
+    background: var(--afrisol-glass-bg);
+    cursor: pointer;
+    transition: background var(--afrisol-transition-fast);
+}
+
+.afrisol-accordion-header:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.afrisol-accordion-header h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--afrisol-text-light);
+}
+
+.afrisol-accordion-icon {
+    color: var(--afrisol-primary);
+    transition: transform var(--afrisol-transition-fast);
+}
+
+.afrisol-accordion-item.active .afrisol-accordion-icon {
+    transform: rotate(180deg);
+}
+
+.afrisol-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--afrisol-transition-normal);
+}
+
+.afrisol-accordion-item.active .afrisol-accordion-content {
+    max-height: 500px;
+}
+
+.afrisol-accordion-body {
+    padding: var(--afrisol-spacing-lg);
+    color: var(--afrisol-text-muted);
+}
+
+/* =========================================
+   Pagination
+   ========================================= */
+.afrisol-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--afrisol-spacing-sm);
+    margin-top: var(--afrisol-spacing-2xl);
+}
+
+.afrisol-pagination-btn {
+    width: 40px;
+    height: 40px;
+    background: var(--afrisol-glass-bg);
+    border: 1px solid var(--afrisol-glass-border);
+    border-radius: var(--afrisol-radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--afrisol-text-light);
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all var(--afrisol-transition-fast);
+}
+
+.afrisol-pagination-btn:hover,
+.afrisol-pagination-btn.active {
+    background: var(--afrisol-primary);
+    border-color: var(--afrisol-primary);
+    color: white;
+}
+
+.afrisol-pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* =========================================
+   Mobile Bottom Navigation Bar (PWA App-like)
+   ========================================= */
+.afrisol-mobile-bottom-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(26, 26, 46, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--afrisol-glass-border);
+    padding: 8px 0;
+    z-index: 9999;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.afrisol-bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--afrisol-text-muted);
+    padding: 8px 16px;
+    min-width: 60px;
+    transition: all 0.3s ease;
+    border-radius: var(--afrisol-radius-md);
+}
+
+.afrisol-bottom-nav-item svg {
+    width: 22px;
+    height: 22px;
+    margin-bottom: 4px;
+    fill: currentColor;
+    transition: transform 0.3s ease;
+}
+
+.afrisol-bottom-nav-item span {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.afrisol-bottom-nav-item:hover,
+.afrisol-bottom-nav-item.active {
+    color: var(--afrisol-primary);
+    background: rgba(255, 107, 53, 0.1);
+}
+
+.afrisol-bottom-nav-item:hover svg,
+.afrisol-bottom-nav-item.active svg {
+    transform: scale(1.1);
+}
+
+/* PWA Standalone Mode - Always show bottom nav */
+@media all and (display-mode: standalone) {
+    .afrisol-mobile-bottom-nav {
+        display: flex !important;
+    }
+    
+    .afrisol-footer {
+        padding-bottom: 80px;
+    }
+    
+    .afrisol-scroll-top,
+    .afrisol-whatsapp-widget {
+        bottom: 85px;
+    }
+}
+
+/* Show bottom nav on mobile screens */
+@media (max-width: 991px) {
+    .afrisol-mobile-bottom-nav {
+        display: flex;
+    }
+    
+    .afrisol-footer {
+        padding-bottom: 80px;
+    }
+    
+    .afrisol-scroll-top {
+        bottom: 85px;
+    }
+    
+    .afrisol-whatsapp-widget {
+        bottom: 85px;
+    }
+    
+    .afrisol-pwa-prompt.show {
+        bottom: 150px;
+    }
+}
+
+/* =========================================
+   Map Section Overlay for Click
+   ========================================= */
+.afrisol-map-link {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.afrisol-map-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(26, 26, 46, 0.95));
+    color: var(--afrisol-primary);
+    padding: 20px;
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.afrisol-map-link:hover .afrisol-map-overlay {
+    background: linear-gradient(transparent, rgba(255, 107, 53, 0.2));
+}
+
+.afrisol-map-overlay span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* =========================================
+   Hero Heading Proper Arrangement
+   ========================================= */
+.afrisol-hero-heading {
+    font-family: var(--afrisol-font-heading);
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--afrisol-primary);
+    margin-bottom: var(--afrisol-spacing-lg);
+    display: block;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.afrisol-hero-subheading {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--afrisol-text-muted);
+    max-width: 550px;
+    margin-bottom: var(--afrisol-spacing-xl);
+}
+
+@media (max-width: 1199px) {
+    .afrisol-hero-heading {
+        font-size: 2.75rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .afrisol-hero-heading {
+        font-size: 2.25rem;
+        text-align: center;
+    }
+    
+    .afrisol-hero-subheading {
+        text-align: center;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .afrisol-hero-heading {
+        font-size: 1.875rem;
+    }
+    
+    .afrisol-hero-subheading {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .afrisol-hero-heading {
+        font-size: 1.625rem;
+    }
+}
+
+/* =========================================
+   PWA Prompt - Improved Visibility
+   ========================================= */
+.afrisol-pwa-prompt {
+    position: fixed;
+    bottom: -300px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 400px;
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.98), rgba(40, 40, 70, 0.98));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 2px solid var(--afrisol-primary);
+    border-radius: var(--afrisol-radius-xl);
+    padding: var(--afrisol-spacing-lg);
+    z-index: 10001;
+    box-shadow: 0 -10px 40px rgba(255, 107, 53, 0.3);
+    transition: bottom 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.afrisol-pwa-prompt.show {
+    bottom: 100px;
+}
+
+.afrisol-pwa-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: var(--afrisol-text-muted);
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 5px;
+    line-height: 1;
+    z-index: 1;
+}
+
+.afrisol-pwa-close:hover {
+    color: var(--afrisol-primary);
+}
+
+.afrisol-pwa-prompt-content {
+    display: flex;
+    align-items: center;
+    gap: var(--afrisol-spacing-md);
+    margin-bottom: var(--afrisol-spacing-md);
+}
+
+.afrisol-pwa-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--afrisol-radius-lg);
+    background: var(--afrisol-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.afrisol-pwa-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.afrisol-pwa-text h4 {
+    margin: 0 0 4px 0;
+    color: var(--afrisol-text-light);
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.afrisol-pwa-text p {
+    margin: 0;
+    color: var(--afrisol-text-muted);
+    font-size: 0.875rem;
+}
+
+.afrisol-pwa-instructions {
+    margin-bottom: var(--afrisol-spacing-md);
+    padding: var(--afrisol-spacing-sm) var(--afrisol-spacing-md);
+    background: rgba(255, 107, 53, 0.1);
+    border-radius: var(--afrisol-radius-md);
+    border-left: 3px solid var(--afrisol-primary);
+}
+
+.afrisol-pwa-browser p {
+    margin: 0;
+    color: var(--afrisol-text-light);
+    font-size: 0.8125rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.afrisol-pwa-browser i {
+    color: var(--afrisol-primary);
+}
+
+.afrisol-pwa-buttons {
+    display: flex;
+    gap: var(--afrisol-spacing-sm);
+}
+
+.afrisol-pwa-buttons .afrisol-btn {
+    flex: 1;
+    justify-content: center;
+}
+
+/* Additional PWA responsive adjustments */
+@media (max-width: 991px) {
+    .afrisol-pwa-prompt.show {
+        bottom: 150px;
+    }
+}
+
+@media (max-width: 575px) {
+    .afrisol-pwa-prompt {
+        width: 95%;
+        padding: var(--afrisol-spacing-md);
+    }
+    
+    .afrisol-pwa-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .afrisol-pwa-text h4 {
+        font-size: 1rem;
+    }
+    
+    .afrisol-pwa-buttons {
+        flex-direction: column;
+    }
+}
