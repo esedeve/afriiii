@@ -4,10 +4,11 @@
  */
 if (!defined('ABSPATH')) exit;
 $settings = get_option('afrisol_settings', array());
-$whatsapp = isset($settings['whatsapp']) ? $settings['whatsapp'] : '+2348032212827';
+$whatsapp = isset($settings['whatsapp']) ? $settings['whatsapp'] : '2348032212827';
 $whatsapp_number = preg_replace('/[^0-9]/', '', $whatsapp);
 
-if (empty($whatsapp_number) || $whatsapp_number === '234XXXXXXXXXX') {
+// Always default to the correct number
+if (empty($whatsapp_number) || $whatsapp_number === '234XXXXXXXXXX' || strlen($whatsapp_number) < 10) {
     $whatsapp_number = '2348032212827';
 }
 ?>

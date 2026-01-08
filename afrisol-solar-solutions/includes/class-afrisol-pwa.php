@@ -138,15 +138,13 @@ class Afrisol_PWA {
                 }, 2000);
             });
             
-            // For Safari and browsers without beforeinstallprompt
-            if (browserType === 'safari-ios' || browserType === 'safari-mac' || browserType === 'firefox' || browserType === 'samsung') {
-                // Show prompt after 3 seconds for these browsers
-                setTimeout(() => {
-                    if (!deferredPrompt) {
-                        showInstallPrompt();
-                    }
-                }, 3000);
-            }
+            // Always show prompt on first visit after 2 seconds (for ALL browsers)
+            // This ensures mobile users always see the prompt
+            setTimeout(() => {
+                if (!localStorage.getItem('afrisol_pwa_dismissed') && !isStandalone()) {
+                    showInstallPrompt();
+                }
+            }, 2500);
             
             // Install button click
             document.addEventListener('click', function(e) {
@@ -177,11 +175,6 @@ class Afrisol_PWA {
                     }
                 }
             });
-            
-            // Show prompt on first visit if not already shown
-            if (!localStorage.getItem('afrisol_pwa_shown') && !isStandalone()) {
-                localStorage.setItem('afrisol_pwa_shown', 'true');
-            }
         </script>
         <?php
     }

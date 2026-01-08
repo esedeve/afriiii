@@ -40,6 +40,7 @@ class Afrisol_Shortcodes {
         add_shortcode('afrisol_whatsapp', array(__CLASS__, 'whatsapp_widget'));
         add_shortcode('afrisol_scroll_top', array(__CLASS__, 'scroll_to_top'));
         add_shortcode('afrisol_pwa_prompt', array(__CLASS__, 'pwa_prompt'));
+        add_shortcode('afrisol_mobile_nav', array(__CLASS__, 'mobile_nav'));
     }
     
     /**
@@ -276,33 +277,14 @@ class Afrisol_Shortcodes {
      * WhatsApp widget shortcode
      */
     public static function whatsapp_widget($atts) {
-        $settings = get_option('afrisol_settings', array());
-        $whatsapp = isset($settings['whatsapp']) ? $settings['whatsapp'] : '';
-        
-        if (empty($whatsapp)) {
-            return '';
-        }
-        
-        return '<a href="https://wa.me/' . esc_attr(preg_replace('/[^0-9]/', '', $whatsapp)) . '" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   class="afrisol-whatsapp-widget" 
-                   aria-label="Chat on WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>';
+        return self::get_template('components/whatsapp-widget');
     }
     
     /**
      * Scroll to top shortcode
      */
     public static function scroll_to_top($atts) {
-        return '<div class="afrisol-scroll-top" id="afrisol-scroll-top">
-                    <svg class="afrisol-scroll-progress" viewBox="0 0 100 100">
-                        <circle class="afrisol-scroll-progress-bg" cx="50" cy="50" r="46"></circle>
-                        <circle class="afrisol-scroll-progress-bar" cx="50" cy="50" r="46"></circle>
-                    </svg>
-                    <i class="fas fa-arrow-up"></i>
-                </div>';
+        return self::get_template('components/scroll-top');
     }
     
     /**
@@ -310,5 +292,12 @@ class Afrisol_Shortcodes {
      */
     public static function pwa_prompt($atts) {
         return self::get_template('components/pwa-prompt');
+    }
+    
+    /**
+     * Mobile bottom navigation bar shortcode
+     */
+    public static function mobile_nav($atts) {
+        return self::get_template('components/mobile-nav-bar');
     }
 }

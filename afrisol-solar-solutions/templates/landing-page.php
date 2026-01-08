@@ -27,4 +27,5 @@ $settings = get_option('afrisol_settings', array());
     <?php echo do_shortcode('[afrisol_scroll_top]'); ?>
     <?php echo do_shortcode('[afrisol_whatsapp]'); ?>
     <?php echo do_shortcode('[afrisol_pwa_prompt]'); ?>
+    <?php echo do_shortcode('[afrisol_mobile_nav]'); ?>
 </div>
